@@ -154,7 +154,7 @@ class Controllers
     } else {
       unset($_SESSION['portal']);
       if ($redirigir) {
-        location('login');
+        location();
       } else {
         return false;
       }

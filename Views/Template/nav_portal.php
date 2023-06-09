@@ -24,7 +24,7 @@
                     <a href="404.html" class="dropdown-item">404 Page</a>
                 </div>
             </div>
-            <a class="nav-item nav-link" data-bs-toggle="modal" data-bs-target="#modal_login" style="cursor:pointer;">Login&nbsp;<i class="fa-solid fa-right-to-bracket fa-beat-fade"></i></a>
+            <a class="nav-item nav-link text-danger" data-bs-toggle="modal" data-bs-target="#modal_login" style="cursor:pointer;"><i class="fa-solid fa-right-to-bracket fa-beat-fade"></i></a>
         </div>
     </div>
 </nav>
@@ -35,18 +35,18 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header bg-primary">
-                <h1 class="modal-title fs-5" id="modal_loginLabel">Iniciar Sesión</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h1 class="modal-title fs-5 text-white" id="modal_loginLabel">Iniciar Sesión</h1>
+                <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form autocomplete="off">
+                <form id="form_login" autocomplete="off">
                     <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Usuario:</label>
-                        <input type="text" placeholder="Ingrese usuario" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <label for="nombre_usuario" class="form-label">Usuario:</label>
+                        <input type="text" placeholder="Ingrese usuario" class="form-control" name="nombre_usuario" id="nombre_usuario" aria-describedby="emailHelp">
                     </div>
                     <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Contraseña:</label>
-                        <input type="password" placeholder="Ingrese su contraseña" class="form-control" id="exampleInputPassword1">
+                        <label for="pass_usuario" class="form-label">Contraseña:</label>
+                        <input type="password" placeholder="Ingrese su contraseña" class="form-control" name="pass_usuario" id="pass_usuario">
                     </div>
                     <div class="mb-3 form-check">
                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -57,9 +57,6 @@
                     </div>
                     <button type="submit" class="btn btn-primary">Iniciar</button>
                 </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
             </div>
         </div>
     </div>

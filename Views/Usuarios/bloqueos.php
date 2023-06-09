@@ -1,27 +1,36 @@
 <?php headerAdmin($data) ?>
-<main id="main" class="main">
-  <div class="pagetitle">
-    <div class="menu-second d-flex justify-content-between">
-      <h1><?= !empty($data['page_name']) ? $data['page_name'] : 'Sin Nombre' ?></h1>
-      <div>
-        <button class="btn btn-sm btn-primary open_modal_usuarios"><i class="fa-solid fa-square-plus"></i> &nbsp Agregar</button>
-        <button class="btn btn-sm btn-danger"><i class="fa-solid fa-file-contract"></i> &nbsp Reporte</button>
+<main>
+  <header class="page-header page-header-compact page-header-light border-bottom bg-white mb-4">
+    <div class="container-fluid px-4">
+      <div class="page-header-content">
+        <div class="row align-items-center justify-content-between pt-3">
+          <div class="col-auto mb-3">
+            <h1 class="page-header-title fw-700 text-primary">
+              <div class="page-header-icon"><i data-feather="users"></i></div>
+              <?= !empty($data['page_name']) ? $data['page_name'] : 'Sin Nombre' ?>
+            </h1>
+          </div>
+          <div class="col-12 col-xl-auto mb-3">
+            <a class="btn btn-sm btn-danger-soft text-danger" href="#">
+              <i class="feather-file-text me-1"></i>
+              Reporte
+            </a>
+            <button type="button" class="btn btn-sm btn-light text-primary open_modal_usuarios">
+              <i class="me-1" data-feather="plus"></i>
+              Agregar
+            </button>
+          </div>
+        </div>
       </div>
     </div>
-    <nav class="d-flex justify-content-between align-items-center">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item">Configuraciones</li>
-        <li class="breadcrumb-item active">Bloqueos</li>
-      </ol>
-    </nav>
-  </div><!-- End Page Title -->
-  <section class="section">
+  </header>
+  <!-- Main page content-->
+  <div class="container-fluid px-4">
     <div class="row">
-      <div class="mensaje_desbloqueo"></div>
-      <div class="col-sm-12">
+      <div class="col-md-12">
         <div class="card">
           <div class="card-body">
-            <table id="lista_bloqueos" class="table table-hover table-bordered table-striped w-100">
+            <table id="lista_bloqueos" class="table-bordered dataTable table-striped table-hover table-sm w-100">
               <thead>
                 <tr>
                   <th>N°</th>
@@ -39,9 +48,8 @@
         </div>
       </div>
     </div>
-  </section>
-
-</main><!-- End #main -->
+  </div>
+</main>
 <?php
 footerAdmin($data);
 getModal('modal_detalle_bloqueo', $data);

@@ -29,6 +29,7 @@
     <link href="<?= media() ?>/portalweb/css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- Template Stylesheet -->
+    <link href="<?= media() ?>/css/general/style_customized.css?version=<?= getVersion() ?>" rel="stylesheet" />
     <link href="<?= media() ?>/portalweb/css/style.css" rel="stylesheet" />
 </head>
 

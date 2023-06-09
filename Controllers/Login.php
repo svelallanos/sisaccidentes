@@ -11,7 +11,7 @@ class Login extends Controllers
   public function login()
   {
     if (parent::verificarLogin()) {
-      header('Location: ' . base_url() . 'Inicio');
+      header('Location: ' . base_url());
       die;
     }
 

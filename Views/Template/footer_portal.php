@@ -66,17 +66,34 @@
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
+    <?php printHTMLRequired() ?>
+
+    <script type="text/javascript">
+        var base_url = '<?= base_url() ?>';
+    </script>
+
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-
+    <script src="<?= media() ?>/js/general/axios.min.js?version=<?= getVersion() ?>"></script>
     <script src="<?= media() ?>/portalweb/js/wow.js"></script>
     <script src="<?= media() ?>/portalweb/js/easing.js"></script>
     <script src="<?= media() ?>/portalweb/js/waypoints.min.js"></script>
     <script src="<?= media() ?>/portalweb/js/owl.carousel.js"></script>
-
+    <script src="<?= media() ?>/js/general/sweetalert2@11.js?version=<?= getVersion() ?>"></script>
+    <script src="<?= media() ?>/js/general/filerequired.js?version=<?= getVersion() ?>"></script>
     <!-- Template Javascript -->
     <script src="<?= media() ?>/portalweb/js/main.js"></script>
+
+
+    <?php if (isset($data['page_array_js']) && !empty($data['page_array_js'])) {
+        foreach ($data['page_array_js'] as $key => $value) { ?>
+            <script src="<?= media() ?>/portalweb/js/<?= $value ?>.js?version=<?= getVersion() ?>"></script>
+    <?php }
+    } ?>
+
+    <!-- Modal de alertas de sesion -->
+    <?php getModal('modal_login', $data) ?>
     </body>
 
     </html>
