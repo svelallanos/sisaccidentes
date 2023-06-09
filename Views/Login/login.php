@@ -23,7 +23,7 @@
   <link rel="stylesheet" href="<?= media() ?>/css/general/login/demo.css" />
   <link rel="stylesheet" href="<?= media() ?>/css/general/login/perfect-scrollbar.css" />
   <link rel="stylesheet" href="<?= media() ?>/css/general/login/page-auth.css" />
-  <link href="<?= media() ?>/css/general/style_customized.css?version=<?= getVerion() ?>" rel="stylesheet" />
+  <link href="<?= media() ?>/css/general/style_customized.css?version=<?= getVersion() ?>" rel="stylesheet" />
   <script src="<?= media() ?>/js/general/login/helpers.js"></script>
   <script src="<?= media() ?>/js/general/login/config.js"></script>
 </head>
@@ -94,13 +94,13 @@
   <script src="<?= media() ?>/js/general/login/menu.js"></script>
   <script src="<?= media() ?>/js/general/login/main.js"></script>
   <script async defer src="https://buttons.github.io/buttons.js"></script>
-  <script src="<?= media() ?>/js/general/axios.min.js?version=<?= getVerion() ?>"></script>
-  <script src="<?= media() ?>/js/general/sweetalert2@11.js?version=<?= getVerion() ?>"></script>
+  <script src="<?= media() ?>/js/general/axios.min.js?version=<?= getVersion() ?>"></script>
+  <script src="<?= media() ?>/js/general/sweetalert2@11.js?version=<?= getVersion() ?>"></script>
 
-  <script src="<?= media() ?>/js/general/filerequired.js?version=<?= getVerion() ?>"></script>
+  <script src="<?= media() ?>/js/general/filerequired.js?version=<?= getVersion() ?>"></script>
 
   <?php if (isset($data['page_function_js']) && !empty($data['page_function_js'])) { ?>
-    <script src="<?= media() ?>/js/<?= $data['page_function_js'] ?>.js?version=<?= getVerion() ?>"></script>
+    <script src="<?= media() ?>/js/<?= $data['page_function_js'] ?>.js?version=<?= getVersion() ?>"></script>
   <?php } ?>
 
   <!-- Modal de alertas de sesion -->

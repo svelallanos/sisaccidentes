@@ -1,8 +1,8 @@
 <!-- Navbar Start -->
 <nav class="navbar navbar-expand-lg bg-dark navbar-light sticky-top px-4 px-lg-5 py-lg-0">
-    <a href="index.html" class="navbar-brand d-flex align-items-center">
-        <h1 class="m-0">
-            <i class="fa fa-building text-primary me-3"></i>APEX
+    <a href="<?= base_url() ?>" class="navbar-brand d-flex align-items-center">
+        <h1 class="m-0 text-white fs-4">
+            <i class="fa fa-building text-primary me-3"></i>GRUPO COBBA E.I.R.L.
         </h1>
     </a>
     <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -10,8 +10,8 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto py-3 py-lg-0">
-            <a href="index.html" class="nav-item nav-link active">Incio</a>
-            <a href="about.html" class="nav-item nav-link">Nosotros</a>
+            <a href="<?= base_url() ?>" class="nav-item nav-link active">Inicio</a>
+            <a href="<?= base_url() ?>Portalweb/nosotros" class="nav-item nav-link">Nosotros</a>
             <a href="service.html" class="nav-item nav-link">Servicios</a>
             <a href="service.html" class="nav-item nav-link">Contacto</a>
             <div class="nav-item dropdown">
