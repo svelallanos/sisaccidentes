@@ -24,7 +24,7 @@
 <body class="nav-fixed">
   <nav class="topnav navbar navbar-expand shadow justify-content-between justify-content-sm-start navbar-light" style='background-image: url("<?= media() ?>/images/fondos/fondo_header.png");' id="sidenavAccordion">
     <!-- Sidenav Toggle Button-->
-    <button class="btn btn-icon btn-transparent-dark order-1 order-lg-0 me-2 ms-lg-2 me-lg-0" id="sidebarToggle"><i data-feather="menu"></i></button>
+    <button class="btn btn-icon btn-transparent-dark order-1 order-lg-0 me-2 ms-lg-2 me-lg-0" id="sidebarToggle"><i class="feather-align-justify text-white"></i></button>
     <!-- Navbar Brand-->
     <!-- * * Tip * * You can use text or an image for your navbar brand.-->
     <!-- * * * * * * When using an image, we recommend the SVG format.-->
