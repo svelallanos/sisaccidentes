@@ -12,7 +12,7 @@ class Usuarios extends Controllers
   public function usuarios()
   {
     parent::verificarLogin(true);
-    parent::verificarPermiso(1, true);
+    parent::verificarPermiso(2, true);
 
     $data['page_id'] = 6;
     $data['page_tag'] = "MDESV - Sistema Caja";
@@ -26,7 +26,7 @@ class Usuarios extends Controllers
   public function nuevo()
   {
     parent::verificarLogin(true);
-    parent::verificarPermiso(1, true);
+    parent::verificarPermiso(2, true);
 
     $seleccionar_roles = $this->model->selectsRoles();
 
@@ -43,7 +43,7 @@ class Usuarios extends Controllers
   public function editar()
   {
     parent::verificarLogin(true);
-    parent::verificarPermiso(1, true);
+    parent::verificarPermiso(2, true);
 
     if (!$_GET || !isset($_GET['usuarios_id']) || intval($_GET['usuarios_id']) === 0) {
       location('Usuarios/lista_usuario');
@@ -174,7 +174,7 @@ class Usuarios extends Controllers
   public function selectsUsers()
   {
     parent::verificarLogin(true);
-    parent::verificarPermiso(1, true);
+    parent::verificarPermiso(2, true);
 
     $usuarios_bloqueados = $this->model->usuariosBloqueadosGroupBy();
     $auxUsuariosBloqueados = array();
@@ -411,7 +411,7 @@ class Usuarios extends Controllers
   public function agregarUsuario()
   {
     parent::verificarLogin(true);
-    parent::verificarPermiso(1, true);
+    parent::verificarPermiso(2, true);
 
     $return = array(
       'status' => false,
@@ -579,7 +579,7 @@ class Usuarios extends Controllers
   public function updateUsuario()
   {
     parent::verificarLogin(true);
-    parent::verificarPermiso(1, true);
+    parent::verificarPermiso(2, true);
 
     $return = array(
       'status' => false,
@@ -706,7 +706,7 @@ class Usuarios extends Controllers
   public function updateFotoPefilUsuario()
   {
     parent::verificarLogin(true);
-    parent::verificarPermiso(1, true);
+    parent::verificarPermiso(2, true);
 
     if ($_SERVER['REQUEST_METHOD'] != 'POST') {
       location('usuarios/lista_usuario');
