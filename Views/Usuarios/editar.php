@@ -1,27 +1,28 @@
 <?php headerAdmin($data) ?>
-<main id="main" class="main">
-
-  <div class="pagetitle">
-    <div class="menu-second d-flex justify-content-between">
-      <h1><?= !empty($data['page_name']) ? $data['page_name'] : 'Sin Nombre' ?></h1>
-      <a href="<?= base_url() ?>Usuarios" class="btn btn-sm btn-purple"><i class="fa-solid fa-reply"></i> Retornar</a>
+<main>
+  <header class="page-header page-header-compact page-header-light border-bottom bg-white mb-4">
+    <div class="container-fluid px-4">
+      <div class="page-header-content">
+        <div class="row align-items-center justify-content-between pt-3">
+          <div class="col-auto mb-3">
+            <h1 class="page-header-title fw-700 text-primary">
+              <div class="page-header-icon"><i data-feather="users"></i></div>
+              <?= !empty($data['page_name']) ? $data['page_name'] : 'Sin Nombre' ?>
+            </h1>
+          </div>
+        </div>
+      </div>
     </div>
-    <nav class="d-flex justify-content-between align-items-center">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item">Configuraciones</li>
-        <li class="breadcrumb-item"><a href="<?= base_url() ?>Usuarios">Usuarios</a></li>
-        <li class="breadcrumb-item active">Editar</li>
-      </ol>
-    </nav>
-  </div><!-- End Page Title -->
-  <section class="section">
+  </header>
+  <!-- Main page content-->
+  <div class="container-xxl px-4">
     <div class="row">
       <div class="col-lg-4">
         <div class="mensaje_file">
         </div>
         <!-- Profile picture card-->
         <div class="card mb-4 mb-xl-0">
-          <div class="card-header fw-bold bg-primary-10" style="color: #012970;">Imagen de Perfil</div>
+          <div class="card-header" style="background-color: #00273c; color: #00b4fe;">Imagen de Perfil</div>
           <div class="card-body text-center">
             <!-- Profile picture image-->
             <img data-path="<?= media() ?>/images/fotoperfil/" class="__img_editarperfil img-account-profile rounded-circle mb-2" src="<?= media() ?>/images/fotoperfil/<?= (empty($data['data-usuario']['usuarios_foto'] || is_null($data['data-usuario']['usuarios_foto'])) ? 'sin_foto.png' : $data['data-usuario']['usuarios_foto']) ?>" alt="">
@@ -39,7 +40,7 @@
                   <div class="pelotas"></div>
                 </div>
               </div>
-              <button class="btn btn-danger cargar_imagen" title="subir foto de perfil" type="button"><i class="feather-upload"></i> &nbsp Cargar imagen</button>
+              <button class="btn btn-sm btn-purple-soft text-purple cargar_imagen" title="subir foto de perfil" type="button"><i class="feather-upload"></i> &nbsp Cargar imagen</button>
             </form>
           </div>
         </div>
@@ -48,7 +49,7 @@
         <!-- Account details card-->
         <div class="mensaje"></div>
         <div class="card mb-4">
-          <div class="card-header bg-primary-10 fw-bold" style="color: #012970;">Actualizar datos de perfil</div>
+          <div class="card-header" style="background-color: #00273c; color: #00b4fe;">Actualizar datos de perfil</div>
           <div class="card-body">
             <form id="form_update_usuario" data-usuario_id="<?= $data['data-usuario']['usuarios_id'] ?>">
               <!-- Form Row-->
@@ -103,7 +104,7 @@
                   <input class="form-check-input cursor-pointer" id="check_editar_rol" type="checkbox">
                   <label>¿Actualizar roles?</label>
                 </label>
-                <div class="alert alert-warning alert-solid p-2 border border-blue border-2" role="alert">Asigna los roles con precaución a los usuarios correspondientes para evitar inconvenientes en el funcionamiento del sistema.</div>
+                <div class="bg-warning rounded p-2 border border-black text-white border-2" role="alert">Asigna los roles con precaución a los usuarios correspondientes para evitar inconvenientes en el funcionamiento del sistema.</div>
               </div>
               <div class="mb-3">
                 <?php foreach ($data['data-roles'] as $key => $value) { ?>
@@ -116,8 +117,8 @@
               <!-- Submit button-->
               <div class="row">
                 <div class="col-12 text-start text-md-end">
-                  <button class="btn btn-primary" type="submit"><i class="feather-save"></i> &nbsp Guardar Cambios</button>
-                  <a href="<?= base_url() ?>/Usuarios" class="btn btn-secondary text-center"><i class="feather-x-circle"></i> &nbsp Cancelar</a>
+                  <button class="btn btn-primary-soft text-primary" type="submit"><i class="feather-save"></i> &nbsp Guardar Cambios</button>
+                  <a href="<?= base_url() ?>/Usuarios" class="btn btn-danger-soft text-danger text-center"><i class="feather-x-circle"></i> &nbsp Cancelar</a>
                 </div>
               </div>
             </form>
@@ -125,7 +126,6 @@
         </div>
       </div>
     </div>
-  </section>
-
-</main><!-- End #main -->
+  </div>
+</main>
 <?php footerAdmin($data) ?>

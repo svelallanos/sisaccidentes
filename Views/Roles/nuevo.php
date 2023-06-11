@@ -1,20 +1,34 @@
 <?php headerAdmin($data) ?>
-<main id="main" class="main">
-
-  <div class="pagetitle">
-    <h1><?= !empty($data['page_name']) ? $data['page_name'] : 'Sin Nombre' ?></h1>
-    <nav>
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item">Configuraciones</li>
-        <li class="breadcrumb-item"><a href="<?= base_url() ?>Roles">Roles</a></li>
-        <li class="breadcrumb-item active">Nuevo</li>
-      </ol>
-    </nav>
-  </div><!-- End Page Title -->
-  <section class="section">
-    <div class="row">
-      <div class="col-md-12">
-        <form id="form_rol_permisos">
+<main>
+  <form id="form_rol_permisos">
+    <header class="page-header page-header-compact page-header-light border-bottom bg-white mb-4">
+      <div class="container-fluid px-4">
+        <div class="page-header-content">
+          <div class="row align-items-center justify-content-between pt-3">
+            <div class="col-auto mb-3">
+              <h1 class="page-header-title fw-700 text-primary">
+                <div class="page-header-icon"><i data-feather="users"></i></div>
+                <?= !empty($data['page_name']) ? $data['page_name'] : 'Sin Nombre' ?>
+              </h1>
+            </div>
+            <div class="col-12 col-xl-auto mb-3">
+              <a class="btn btn-sm btn-indigo-soft text-indigo" href="<?= base_url() ?>Roles">
+                <i class="feather-file-text me-1"></i>
+                Cancelar
+              </a>
+              <button type="submit" class="btn btn-sm btn-light text-primary">
+                <i class="me-1" data-feather="plus"></i>
+                Guardar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Main page content-->
+    <div class="container-fluid px-4">
+      <div class="row">
+        <div class="col-md-12">
           <div class="card">
             <!-- lift : Sirve para dar movimiento a las cards y demas estilos -->
             <div class="card-body">
@@ -29,10 +43,6 @@
                         <i class="feather-file-text"></i>
                       </span>
                     </div>
-                  </div>
-                  <div class="col-12 col-md-6 col-xl-8 col-xxl-9 mt-2 mt-md-0 text-md-end">
-                    <button type="submit" class="btn btn-success mr-2"><i class="feather-plus-circle"></i> &nbsp Guardar</button>
-                    <a href="<?= base_url() ?>Roles" class="btn btn-secondary"><i class="feather-x-circle"></i> &nbsp Cancelar</a>
                   </div>
                 </div>
               </div>
@@ -70,10 +80,9 @@
               </div>
             </div>
           </div>
-        </form>
+        </div>
       </div>
     </div>
-  </section>
-
-</main><!-- End #main -->
+  </form>
+</main>
 <?php footerAdmin($data) ?>

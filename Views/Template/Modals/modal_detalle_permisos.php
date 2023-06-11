@@ -32,7 +32,7 @@
                 <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="lista_permisos_delete" data-bs-parent="#accordionExample" style="">
                   <div class="accordion-body">
                     <div class="table-responsive">
-                      <table class="table display">
+                      <table class="table-bordered dataTable table-striped table-hover table-sm w-100">
                         <thead>
                           <tr>
                             <th class="text-center">N°</th>
@@ -65,7 +65,7 @@
       </div>
       <div class="modal-body">
         <div class="table-responsive">
-          <table id="tb_usuarios" class="table table-hover table-bordered table-striped w-100">
+          <table id="tb_usuarios" class="table-bordered dataTable table-striped table-hover table-sm w-100">
             <thead>
               <tr>
                 <th>N°</th>

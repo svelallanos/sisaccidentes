@@ -21,7 +21,7 @@
 <script src="<?= media() ?>/js/general/axios.min.js?version=<?= getVersion() ?>"></script>
 
 <!-- Template Main JS File -->
-<script src="<?= media() ?>/js/general/main.js"></script>
+<!-- <script src="<?= media() ?>/js/general/main.js"></script> -->
 <script src="<?= media() ?>/js/general/filerequired.js?version=<?= getVersion() ?>"></script>
 
 <?php if (isset($data['page_function_js']) && !empty($data['page_function_js'])) { ?>

@@ -1,6 +1,6 @@
 <div id="layoutSidenav_nav">
   <nav class="sidenav shadow-right sidenav-light">
-    <div class="sidenav-menu">
+    <div class="sidenav-menu" style='background-image: url("<?= media() ?>/images/fondos/fondo_aside.png");'>
       <div class="nav accordion" id="accordionSidenav">
         <!-- Sidenav Menu Heading (Account)-->
         <!-- * * Note: * * Visible only on and above the sm breakpoint-->
@@ -19,9 +19,14 @@
           Messages
           <span class="badge bg-success-soft text-success ms-auto">2 New!</span>
         </a>
+        <!-- Boton de Inicio -->
+        <a class="nav-link mt-3 bg-light fw-700" href="<?= base_url() ?>Inicio">
+          <div class="nav-link-icon"><i class="feather-slack"></i></div>
+          Inicio
+        </a>
         <!-- Sidenav Menu Heading (Core)-->
         <?php if (verificarPermiso($data, 1) || verificarPermiso($data, 2) || verificarPermiso($data, 3) || verificarPermiso($data, 4)) { ?>
-          <div class="sidenav-menu-heading">Panel Administrador</div>
+          <div class="sidenav-menu-heading pt-2">Panel Administrador</div>
           <!-- Sidenav Accordion (Dashboard)-->
           <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
             <div class="nav-link-icon"><i class="feather-settings"></i></div>
@@ -146,8 +151,8 @@
     <!-- Sidenav Footer-->
     <div class="sidenav-footer">
       <div class="sidenav-footer-content">
-        <div class="sidenav-footer-subtitle">Logged in as:</div>
-        <div class="sidenav-footer-title">Valerie Luna</div>
+        <div class="sidenav-footer-subtitle text-success badge bg-success-soft mb-2">En Línea</div>
+        <div class="sidenav-footer-title fw-700 text-body">Gestión: <span class="text-pink">2023 - 2026</span></div>
       </div>
     </div>
   </nav>

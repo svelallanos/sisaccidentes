@@ -1,23 +1,37 @@
 <?php headerAdmin($data) ?>
-<main id="main" class="main">
-
-  <div class="pagetitle">
-    <h1><?= !empty($data['page_name']) ? $data['page_name'] : 'Sin Nombre' ?></h1>
-    <nav>
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item">Configuraciones</li>
-        <li class="breadcrumb-item"><a href="<?= base_url() ?>Usuarios">Usuarios</a></li>
-        <li class="breadcrumb-item active">Nuevo</li>
-      </ol>
-    </nav>
-  </div><!-- End Page Title -->
-  <section class="section">
+<main>
+  <header class="page-header page-header-compact page-header-light border-bottom bg-white mb-4">
+    <div class="container-fluid px-4">
+      <div class="page-header-content">
+        <div class="row align-items-center justify-content-between pt-3">
+          <div class="col-auto mb-3">
+            <h1 class="page-header-title fw-700 text-primary">
+              <div class="page-header-icon"><i data-feather="users"></i></div>
+              <?= !empty($data['page_name']) ? $data['page_name'] : 'Sin Nombre' ?>
+            </h1>
+          </div>
+          <!-- <div class="col-12 col-xl-auto mb-3">
+            <a class="btn btn-sm btn-danger-soft text-danger" href="#">
+              <i class="feather-file-text me-1"></i>
+              Reporte
+            </a>
+            <a class="btn btn-sm btn-light text-primary" href="<?= base_url() ?>Usuarios/nuevo">
+              <i class="me-1" data-feather="plus"></i>
+              Nuevo Usuario
+            </a>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- Main page content-->
+  <div class="container-fluid px-4">
     <div class="row">
       <div class="col-md-12">
         <!-- Account details card-->
         <div class="mensaje"></div>
         <div class="card mb-4">
-          <div class="card-header fw-bold" style="background-color: #8ce8ff;">Datos de perfil</div>
+          <div class="card-header fw-bold" style="background-color: #00273c; color: #00b4fe;">Datos de perfil</div>
           <div class="card-body">
             <form id="consultarDatosDni">
               <div class="row">
@@ -81,7 +95,7 @@
               </div>
               <div class="mb-2">
                 <label class="fw-700 mb-2">ASIGNAR ROLES</label>
-                <div class="alert alert-warning alert-solid p-2 border border-blue border-2" role="alert">Asigna los roles con precaución a los usuarios correspondientes para evitar inconvenientes en el funcionamiento del sistema.</div>
+                <div class="bg-warning text-white rounded alert-solid p-2 border border-black border-2" role="alert">Asigna los roles con precaución a los usuarios correspondientes para evitar inconvenientes en el funcionamiento del sistema.</div>
               </div>
               <div class="mb-3">
                 <?php foreach ($data['data-roles'] as $key => $value) { ?>
@@ -94,8 +108,8 @@
               <!-- Submit button-->
               <div class="row">
                 <div class="col-12 text-start text-md-end">
-                  <button class="btn btn-primary" type="submit"><i class="feather-save"></i> &nbsp Guardar Cambios</button>
-                  <a href="<?= base_url() ?>Usuarios" class="btn btn-secondary text-center"><i class="feather-x-circle"></i> &nbsp Cancelar</a>
+                  <button class="btn btn-outline-teal" type="submit"><i class="feather-save"></i> &nbsp Guardar Cambios</button>
+                  <a href="<?= base_url() ?>Usuarios" class="btn btn-danger-soft text-danger text-center"><i class="feather-x-circle"></i> &nbsp Cancelar</a>
                 </div>
               </div>
             </form>
@@ -103,7 +117,6 @@
         </div>
       </div>
     </div>
-  </section>
-
-</main><!-- End #main -->
+  </div>
+</main>
 <?php footerAdmin($data) ?>

@@ -3,7 +3,7 @@
     * Copyright 2013-2022 Start Bootstrap
     * Licensed under SEE_LICENSE (https://github.com/StartBootstrap/sb-admin-pro/blob/master/LICENSE)
     */
-    window.addEventListener('DOMContentLoaded', event => {
+window.addEventListener('DOMContentLoaded', event => {
     // Activate feather
     feather.replace();
 
@@ -57,15 +57,27 @@
     }
 
     // Add active state to sidbar nav links
-    let activatedPath = window.location.pathname.match(/([\w-]+\.html)/, '$1');
+    let Path = window.location.pathname+'.php';
+    let activatedPath = Path.match(/([\w-]+\.php)/, '$1');
+    // let activatedPath = window.location.pathname.match(/([\w-]+\.php)/, '$1');
 
     if (activatedPath) {
-        activatedPath = activatedPath[0];
+        let auxPath = activatedPath['input'].split('/');
+        activatedPath = auxPath[2]+'/'+auxPath[3];
+        if(auxPath[3] === undefined){
+            activatedPath = auxPath[2];
+        }else{
+            if(auxPath[2].toLowerCase()+'.php' === auxPath[3]){
+                activatedPath = auxPath[2]+'.php';
+            }
+        }
     } else {
-        activatedPath = 'index.html';
+        activatedPath = 'Inicio.php';
     }
+    let arr = activatedPath.split('.');
+    activatedPath = arr[0];
 
-    const targetAnchors = document.body.querySelectorAll('[href="' + activatedPath + '"].nav-link');
+    const targetAnchors = document.body.querySelectorAll('[href="'+base_url + activatedPath + '"].nav-link');
 
     targetAnchors.forEach(targetAnchor => {
         let parentNode = targetAnchor.parentNode;
