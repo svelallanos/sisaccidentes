@@ -7,10 +7,11 @@ class AccidentesModel extends Mysql
     parent::__construct();
   }
 
-  function selectusers()
+  function selectsAccidentes()
   {
-    $sql = 'SELECT * FROM roles';
-    $result = $this->select_all($sql, array(), DB_PORTAL);
+    $sql = 'SELECT * FROM accidentes';
+    $result = $this->select_all($sql, array(), DB_ACCIDENTES);
+
     return $result;
   }
 }

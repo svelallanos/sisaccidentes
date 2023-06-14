@@ -16,7 +16,7 @@ class Mysql extends Conexion
     $this->strquery = $query;
     $this->arrvalues = $arrvalues;
 
-    if ($base == 'portal_mdesv') {
+    if ($base == 'bd_accidentes') {
       $insert = $this->conexionPortal->prepare($this->strquery);
     } else {
       echo 'Base de datos no especificada.';
@@ -26,7 +26,7 @@ class Mysql extends Conexion
     $lastInsert = $insert->execute($this->arrvalues);
 
     if ($lastInsert) {
-      if ($base == 'portal_mdesv') {
+      if ($base == 'bd_accidentes') {
         $lastInsert = $this->conexionPortal->lastInsertId();
       }
     } else {
@@ -42,7 +42,7 @@ class Mysql extends Conexion
     $this->strquery = $query;
     $this->arrvalues = $arrvalues;
 
-    if ($base == 'portal_mdesv') {
+    if ($base == 'bd_accidentes') {
       $update = $this->conexionPortal->prepare($this->strquery);
     } else {
       echo 'Base de datos no especificada.';
@@ -59,7 +59,7 @@ class Mysql extends Conexion
     $this->strquery = $query;
     $this->arrvalues = $arrvalues;
 
-    if ($base == 'portal_mdesv') {
+    if ($base == 'bd_accidentes') {
       $result = $this->conexionPortal->prepare($this->strquery);
     } else {
       echo 'Base de datos no especificada.';
@@ -77,7 +77,7 @@ class Mysql extends Conexion
     $this->strquery = $query;
     $this->arrvalues = $arrvalues;
 
-    if ($base == 'portal_mdesv') {
+    if ($base == 'bd_accidentes') {
       $result = $this->conexionPortal->prepare($this->strquery);
     } else {
       echo 'Base de datos no especificada.';
@@ -95,7 +95,7 @@ class Mysql extends Conexion
     $this->strquery = $query;
     $this->arrvalues = $arrvalues;
 
-    if ($base == 'portal_mdesv') {
+    if ($base == 'bd_accidentes') {
       $result = $this->conexionPortal->prepare($this->strquery);
     } else {
       echo 'Base de datos no especificada.';
