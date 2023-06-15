@@ -5,7 +5,7 @@
         <div class="row">
             <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
-                    <div class="carousel-item active" data-bs-interval="10000">
+                <div class="carousel-item active" data-bs-interval="10000">
                         <img src="<?= media() ?>/portalweb/images/caidas_1.jpg" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item" data-bs-interval="2000">
@@ -13,6 +13,9 @@
                     </div>
                     <div class="carousel-item">
                         <img src="<?= media() ?>/portalweb/images/caidas_3.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="<?= media() ?>/portalweb/images/caidas_4.jpg" class="d-block w-100" alt="...">
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">

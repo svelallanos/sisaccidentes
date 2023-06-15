@@ -3,12 +3,13 @@
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
-                    <h1 class="text-white mb-4">
-                        <i class="fa fa-building text-primary me-3"></i>APEX
+                    <h1 class="text-white mb-4 ">
+                        <i class="fa fa-building text-primary me-3"></i>GRUPO COBBA E.I.R.L.
+
                     </h1>
                     <p>
-                        Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat
-                        ipsum et lorem et sit, sed stet lorem sit clita
+                    El éxito consiste en ir de fracaso en fracaso sin perder el entusiasmo. 
+                    Nadie está a salvo de las derrotas.
                     </p>
                     <div class="d-flex pt-2">
                         <a class="btn btn-square btn-outline-primary me-1" href=""><i class="fab fa-twitter"></i></a>
@@ -18,34 +19,37 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <h4 class="text-light mb-4">Address</h4>
+                    <h4 class="text-light mb-4">DIRECCION</h4>
                     <p>
-                        <i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA
+                        <i class="fa fa-map-marker-alt me-3"></i>R. MARISCAL CACERES NRO. 179 P.J. POETA JOSE GALVEZ BARRENE,
+                         LIMA,LIMA,VILLA MARIA DEL TRIUNFO       
                     </p>
-                    <p><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                    <p><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                    <p><i class="fa fa-phone-alt me-3"></i>+51 98889***</p>
+                    <p><i class="fa fa-envelope me-3"></i>cobbadoris@gmail.com</p>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <h4 class="text-light mb-4">Quick Links</h4>
-                    <a class="btn btn-link" href="">About Us</a>
-                    <a class="btn btn-link" href="">Contact Us</a>
-                    <a class="btn btn-link" href="">Our Services</a>
-                    <a class="btn btn-link" href="">Terms & Condition</a>
-                    <a class="btn btn-link" href="">Support</a>
+                    <h4 class="text-light mb-4">ENLACES RAPIDOS</h4>
+                    <a class="btn btn-link" href="<?= base_url() ?>Portalweb/nosotros">Sobre nosotros</a>
+                    
+                    <a class="btn btn-link" href="<?= base_url() ?>Portalweb/nosotros">Nuestros servicios</a>
+                    <!--  <a class="btn btn-link" href="">Términos y condiciones</a>
+                    <a class="btn btn-link" href="">Apoyo</a>
+<a class="btn btn-link" href="">Contacta con nosotros </a>
+                -->
                 </div>
-                <div class="col-lg-3 col-md-6">
+                <!-- <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Newsletter</h4>
-                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p> -->
                     <div class="position-relative mx-auto" style="max-width: 400px">
-                        <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email" />
+                       <!-- <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email" />
                         <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">
                             SignUp
                         </button>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
-        <div class="container-fluid copyright">
+       <!--  <div class="container-fluid copyright">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
@@ -53,13 +57,11 @@
                     </div>
                     <div class="col-md-6 text-center text-md-end">
                         <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        Designed By <a href="https://htmlcodex.com">HTML Codex</a>
-                        <br />Distributed By:
-                        <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+                    
+                    <!--    </div>
+                 <!--   </div>
+              <!--  </div>
+          <!--  </div>-->
     </div>
     <!-- Footer End -->
 
