@@ -88,13 +88,21 @@
             </nav>
           </div>
         <?php } ?>
-        <!-- Sidenav Heading (Addons)-->
-        <div class="sidenav-menu-heading">Plugins</div>
-        <!-- Sidenav Link (Charts)-->
-        <a class="nav-link" href="charts.html">
-          <div class="nav-link-icon"><i data-feather="bar-chart"></i></div>
-          Charts
-        </a>
+        <?php if (verificarPermiso($data, 9) || verificarPermiso($data, 10)) { ?>
+          <div class="sidenav-menu-heading">PANEL USUARIO</div>
+          <?php if (verificarPermiso($data, 9)) { ?>
+            <a class="nav-link" href="charts.html">
+              <div class="nav-link-icon"><i class="feather-file-text"></i></div>
+              Test Accidentes
+            </a>
+          <?php } ?>
+          <?php if (verificarPermiso($data, 10)) { ?>
+            <a class="nav-link" href="charts.html">
+              <div class="nav-link-icon"><i class="feather-folder"></i></div>
+              Historial Test
+            </a>
+          <?php } ?>
+        <?php } ?>
       </div>
     </div>
     <!-- Sidenav Footer-->

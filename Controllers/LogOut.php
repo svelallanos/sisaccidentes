@@ -10,6 +10,6 @@ class LogOut extends Controllers
   public function logOut($contesto = null)
   {
     unset($_SESSION['portal']);
-    location('');
+    location('login');
   }
 }

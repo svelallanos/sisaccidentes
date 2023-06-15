@@ -63,6 +63,7 @@
                     <a class="btn btn-square border-end" href=""><i class="fab fa-twitter"></i></a>
                     <a class="btn btn-square border-end" href=""><i class="fab fa-linkedin-in"></i></a>
                     <a class="btn btn-square border-end" href=""><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-square border-end" href="<?= base_url() ?>login"><i class="fa-solid fa-right-to-bracket"></i></a>
                 </div>
             </div>
         </div>

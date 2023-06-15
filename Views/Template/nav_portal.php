@@ -24,40 +24,6 @@
                     <a href="404.html" class="dropdown-item">404 Page</a>
                 </div>
             </div>
-            <a class="nav-item nav-link text-danger" data-bs-toggle="modal" data-bs-target="#modal_login" style="cursor:pointer;"><i class="fa-solid fa-right-to-bracket fa-beat-fade"></i></a>
         </div>
     </div>
 </nav>
-<!-- Navbar End -->
-
-<!-- Modal -->
-<div class="modal fade" id="modal_login" tabindex="-1" aria-labelledby="modal_loginLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header bg-primary">
-                <h1 class="modal-title fs-5 text-white" id="modal_loginLabel">Iniciar Sesión</h1>
-                <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form id="form_login" autocomplete="off">
-                    <div class="mb-3">
-                        <label for="nombre_usuario" class="form-label">Usuario:</label>
-                        <input type="text" placeholder="Ingrese usuario" class="form-control" name="nombre_usuario" id="nombre_usuario" aria-describedby="emailHelp">
-                    </div>
-                    <div class="mb-3">
-                        <label for="pass_usuario" class="form-label">Contraseña:</label>
-                        <input type="password" placeholder="Ingrese su contraseña" class="form-control" name="pass_usuario" id="pass_usuario">
-                    </div>
-                    <div class="mb-3 form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Acepto términos y condiciones</label>
-                    </div>
-                    <div class="mb-3 form-label">
-                        <a href="#">Crear nueva cuenta.</a>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Iniciar</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
