@@ -70,7 +70,7 @@
             <div class="d-none d-xl-block col-lg-3 p-3 border border-3 border-info rounded bg-white m-auto mt-0">
                 <div class="row">
                     <div class="col-md-12">
-                        <img class="shadow roles_img" src="<?= media() ?>/images/roles_1.png" alt="">
+                        <img class="shadow roles_img" src="<?= media() ?>/images/roles_2.png" alt="">
                     </div>
                     <div class="col-md-12">
                         <h3 class="text-center p-3 pb-2 m-0 text-primary"><strong>Roles</strong></h3>

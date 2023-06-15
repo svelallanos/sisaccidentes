@@ -29,7 +29,7 @@
     <!-- * * Tip * * You can use text or an image for your navbar brand.-->
     <!-- * * * * * * When using an image, we recommend the SVG format.-->
     <!-- * * * * * * Dimensions: Maximum height: 32px, maximum width: 240px-->
-    <a class="navbar-brand pe-3 ps-4 ps-lg-2" href="<?= base_url() ?>Inicio" style="color: #c5fff6;">ADM. Portal Web</a>
+    <a class="navbar-brand pe-3 ps-4 ps-lg-2" href="<?= base_url() ?>Inicio" style="color: #c5fff6;">SIS. COBBA</a>
     <!-- Navbar Search Input-->
     <!-- * * Note: * * Visible only on and above the lg breakpoint-->
     <form class="form-inline me-auto d-none d-lg-block me-3">
@@ -50,7 +50,7 @@
           <a class="dropdown-item py-3" href="https://docs.startbootstrap.com/sb-admin-pro" target="_blank">
             <div class="icon-stack bg-primary-soft text-primary me-4" style="color: #c5fff6;"><i data-feather="book"></i></div>
             <div>
-              <div class="small text-gray-500">Documentation</div>
+              <div class="small text-gray-500">Documentación</div>
               Usage instructions and reference
             </div>
           </a>

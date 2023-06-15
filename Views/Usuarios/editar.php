@@ -25,7 +25,7 @@
           <div class="card-header" style="background-color: #00273c; color: #00b4fe;">Imagen de Perfil</div>
           <div class="card-body text-center">
             <!-- Profile picture image-->
-            <img data-path="<?= media() ?>/images/fotoperfil/" class="__img_editarperfil img-account-profile rounded-circle mb-2" src="<?= media() ?>/images/fotoperfil/<?= (empty($data['data-usuario']['usuarios_foto'] || is_null($data['data-usuario']['usuarios_foto'])) ? 'sin_foto.png' : $data['data-usuario']['usuarios_foto']) ?>" alt="">
+            <img data-path="<?= media() ?>/images/fotoperfil/" class="__img_editarperfil img-account-profile rounded-circle mb-2 w-50 h-100" src="<?= media() ?>/images/fotoperfil/<?= (empty($data['data-usuario']['usuarios_foto'] || is_null($data['data-usuario']['usuarios_foto'])) ? 'sin_foto.png' : $data['data-usuario']['usuarios_foto']) ?>" alt="">
             <!-- Profile picture help block-->
             <div class="small font-italic text-muted mb-2">JPG o PNG de un tamaño máximo de 3 MB</div>
             <!-- Profile picture upload button-->

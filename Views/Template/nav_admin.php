@@ -63,12 +63,12 @@
           </div>
         <?php } ?>
 
-        <?php if (verificarPermiso($data, 6) || verificarPermiso($data, 7)) { ?>
-          <div class="sidenav-menu-heading">Adeli</div>
+        <?php if (verificarPermiso($data, 6) || verificarPermiso($data, 7) || verificarPermiso($data, 8) | verificarPermiso($data, 11) || verificarPermiso($data, 12)) { ?>
+          <div class="sidenav-menu-heading">Registro de Datos</div>
           <!-- Sidenav Accordion (Pages)-->
           <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
             <div class="nav-link-icon"><i data-feather="grid"></i></div>
-            Alimentar DB
+            Variables
             <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
           </a>
           <div class="collapse" id="collapsePages" data-bs-parent="#accordionSidenav">
@@ -80,18 +80,30 @@
                 </a>
               <?php } ?>
 
-              <?php if (verificarPermiso($data, 6)) { ?>
+              <?php if (verificarPermiso($data, 7)) { ?>
                 <a class="nav-link" href="<?= base_url() ?>Lesiones">
                   Lesiones
                   <span class="badge bg-primary-soft text-primary ms-auto">Admin</span>
                 </a>
               <?php } ?>
 
-              <?php if (verificarPermiso($data, 7)) { ?>
-                <!-- <a class="nav-link" href="<?= base_url() ?>Actividades">
-                  Actividades
+              <?php if (verificarPermiso($data, 8)) { ?>
+                <a class="nav-link" href="<?= base_url() ?>Actividades">
+                  Cargos
                   <span class="badge bg-primary-soft text-primary ms-auto">Admin</span>
-                </a> -->
+                </a>
+              <?php } ?>
+              <?php if (verificarPermiso($data, 11)) { ?>
+                <a class="nav-link" href="<?= base_url() ?>Capacitaciones">
+                  Capacitaciones
+                  <span class="badge bg-primary-soft text-primary ms-auto">Admin</span>
+                </a>
+              <?php } ?>
+              <?php if (verificarPermiso($data, 12)) { ?>
+                <a class="nav-link" href="<?= base_url() ?>EPP">
+                  Equipo de Protección Personal
+                  <span class="badge bg-primary-soft text-primary ms-auto">Admin</span>
+                </a>
               <?php } ?>
             </nav>
           </div>
@@ -117,7 +129,7 @@
     <div class="sidenav-footer">
       <div class="sidenav-footer-content">
         <div class="sidenav-footer-subtitle text-success badge bg-success-soft mb-2">En Línea</div>
-        <div class="sidenav-footer-title fw-700 text-body">Gestión: <span class="text-pink">2023 - 2026</span></div>
+        <div class="sidenav-footer-title fw-700 text-body">Sistema COBBA: <span class="text-pink">2023</span></div>
       </div>
     </div>
   </nav>
