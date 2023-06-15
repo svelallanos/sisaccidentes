@@ -91,13 +91,13 @@
         <?php if (verificarPermiso($data, 9) || verificarPermiso($data, 10)) { ?>
           <div class="sidenav-menu-heading">PANEL USUARIO</div>
           <?php if (verificarPermiso($data, 9)) { ?>
-            <a class="nav-link" href="charts.html">
+            <a class="nav-link" href="<?= base_url() ?>test">
               <div class="nav-link-icon"><i class="feather-file-text"></i></div>
               Test Accidentes
             </a>
           <?php } ?>
           <?php if (verificarPermiso($data, 10)) { ?>
-            <a class="nav-link" href="charts.html">
+            <a class="nav-link" href="<?= base_url() ?>test/historial">
               <div class="nav-link-icon"><i class="feather-folder"></i></div>
               Historial Test
             </a>
