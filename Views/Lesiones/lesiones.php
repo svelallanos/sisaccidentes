@@ -36,11 +36,11 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <div class="message_accidentes mb-2">
+                        <div class="message_lesiones mb-2">
 
                         </div>
 
-                        <table id="lista_accidentes" class="table-bordered dataTable table-striped table-hover table-sm w-100">
+                        <table id="lista_lesiones" class="table-bordered dataTable table-striped table-hover table-sm w-100">
                             <thead>
                                 <tr>
                                     <th>N°</th>
@@ -60,5 +60,5 @@
     </div>
 </main>
 <?php footerAdmin($data);
-getModal('modal_accidentes', $data);
+getModal('modal_lesiones', $data);
 ?>

@@ -79,11 +79,19 @@
                   <span class="badge bg-primary-soft text-primary ms-auto">Admin</span>
                 </a>
               <?php } ?>
-              <?php if (verificarPermiso($data, 7)) { ?>
-                <a class="nav-link" href="<?= base_url() ?>Actividades">
-                  Actividades
+
+              <?php if (verificarPermiso($data, 6)) { ?>
+                <a class="nav-link" href="<?= base_url() ?>Lesiones">
+                  Lesiones
                   <span class="badge bg-primary-soft text-primary ms-auto">Admin</span>
                 </a>
+              <?php } ?>
+
+              <?php if (verificarPermiso($data, 7)) { ?>
+                <!-- <a class="nav-link" href="<?= base_url() ?>Actividades">
+                  Actividades
+                  <span class="badge bg-primary-soft text-primary ms-auto">Admin</span>
+                </a> -->
               <?php } ?>
             </nav>
           </div>

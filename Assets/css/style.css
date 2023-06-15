@@ -66,6 +66,10 @@
     font-weight: normal;
 }
 
+.fw-500{
+    font-weight: 500;
+}
+
 
 /*** Navbar ***/
 .navbar.sticky-top {

@@ -2,7 +2,7 @@ var dataAccidentes;
 let identificador;
 
 $(document).ready(function () {
-    cargarAccidentes();
+    table_lesiones();
 
     identificador = 1;
 
@@ -13,30 +13,29 @@ $(document).ready(function () {
 
         clear_valores();
 
-        $("#modal_accidentes").modal('show');
+        $("#modal_lesiones").modal('show');
     });
 
-    $(document).on('click', '.btn_editar_accidente', function(){
+    $(document).on('click', '.btn_editar_lesion', function(){
 
-        let accidente_id = $(this).attr('accidente_id');
-        let accidentes_nombre = $(this).attr('accidentes_nombre');
-        let accidentes_descripcion = $(this).attr('accidentes_descripcion');
+        let lesiones_id = $(this).attr('lesiones_id');
+        let lesiones_nombre = $(this).attr('lesiones_nombre');
+        let lesiones_descripcion = $(this).attr('lesiones_descripcion');
         identificador = 2;
-        console.log(accidentes_nombre);
 
         clear_valores();
         
-        $("#accidentes_id").val(accidente_id);
-        $("#name_accidente").val(accidentes_nombre);
-        $("#descripcion_accidente").html(accidentes_descripcion);
+        $("#lesiones_id").val(lesiones_id);
+        $("#lesiones_nombre").val(lesiones_nombre);
+        $("#lesiones_descripcion").html(lesiones_descripcion);
 
         $(".title_mod").html('ACTUALIZAR ACCIDENTE');
         $("#btn_save_mod").html('Actualizar');
 
-        $("#modal_accidentes").modal('show');
+        $("#modal_lesiones").modal('show');
     });
 
-    $("#form_accidentes").submit(function(e){
+    $("#form_lesiones").submit(function(e){
 
         e.preventDefault();
 
@@ -46,7 +45,7 @@ $(document).ready(function () {
 
         $.ajax({
             type: "POST",
-            url: base_url + "accidentes/main_accidentes",
+            url: base_url + "lesiones/main_lesiones",
             data: datos,
             dataType: "json",
             processData: false,
@@ -58,13 +57,13 @@ $(document).ready(function () {
             {
                 let clase = msgAlert(data.alert, data.message)
 
-                $(".message_accidentes").html(clase);
+                $(".message_lesiones").html(clase);
 
-                $("#modal_accidentes").modal('hide');
+                $("#modal_lesiones").modal('hide');
 
                 clear_valores();
 
-                cargarAccidentes();
+                table_lesiones();
             } 
             else 
             {
@@ -72,7 +71,7 @@ $(document).ready(function () {
                 {
                     let clase = msgAlert(data.alert, data.message)
 
-                    $(".message_accidentes").html(clase);
+                    $(".message_lesiones").html(clase);
                 }
                 else{
                     Swal.fire({
@@ -96,7 +95,7 @@ $(document).ready(function () {
         });
     });
 
-    $(document).on('click', '.btn_borrar_accidente', function(){
+    $(document).on('click', '.btn_borrar_lesion', function(){
 
         let accidentes_id = $(this).attr('accidente_id');
         let accidentes_nombre = $(this).attr('accidentes_nombre');
@@ -120,7 +119,7 @@ $(document).ready(function () {
 
                 $.ajax({
                     type: "POST",
-                    url: base_url + "accidentes/main_accidentes",
+                    url: base_url + "lesiones/main_lesiones",
                     data: datos,
                     dataType: "json"
         
@@ -132,11 +131,11 @@ $(document).ready(function () {
         
                         $(".message_accidentes").html(clase);
         
-                        $("#modal_accidentes").modal('hide');
+                        $("#modal_lesiones").modal('hide');
         
                         clear_valores();
         
-                        cargarAccidentes();
+                        table_lesiones();
                     } 
                     else 
                     {
@@ -172,19 +171,19 @@ $(document).ready(function () {
     });
 });
 
-function cargarAccidentes() {
-    dataAccidentes = $('#lista_accidentes').DataTable({
+function table_lesiones() {
+    dataAccidentes = $('#lista_lesiones').DataTable({
         aProcessing: true,
         aServerSide: true,
         language: languajeDefault,
         ajax: {
-            url: base_url + "Accidentes/selectsAccidentes",
+            url: base_url + "lesiones/getDataLesiones",
             dataSrc: "",
         },
         columns: [
             { data: "numero" },
-            { data: "accidentes_nombre" },
-            { data: "accidentes_descripcion" },
+            { data: "lesiones_nombre" },
+            { data: "lesiones_descripcion" },
             { data: "estado" },
             { data: "options" },
         ],
@@ -219,7 +218,7 @@ function cargarAccidentes() {
 
 function clear_valores()
 {
-    $("#accidentes_id").val('');
-    $("#name_accidente").val('');
-    $("#descripcion_accidente").html('');
+    $("#lesiones_id").val('');
+    $("#lesiones_nombre").val('');
+    $("#lesiones_descripcion").html('');
 }
