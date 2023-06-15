@@ -71,6 +71,9 @@
               <span class="fw-bold">Nota: </span>
               <span class="text-secondary">Sino tiene cuenta comunicate con el administrador.</span>
             </p>
+            <div>
+              <a href="<?= base_url() ?>"><i class="fa-solid fa-left-long fa-beat"></i>&nbsp;Regresar</a>
+            </div>
           </div>
         </div>
         <!-- /Register -->
@@ -86,6 +89,7 @@
 
   <!-- Core JS -->
   <!-- build:js assets/vendor/js/core.js -->
+  <script src="<?= media() ?>/js/general/all.js?version=<?= getVersion() ?>"></script>
   <script src="<?= media() ?>/js/general/login/jquery.js"></script>
   <script src="<?= media() ?>/js/general/login/popper.js"></script>
   <script src="<?= media() ?>/js/general/login/bootstrap.js"></script>
