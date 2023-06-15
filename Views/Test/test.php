@@ -40,19 +40,19 @@
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="radio_edad" id="radio_edad_1">
                                         <label class="form-check-label" for="radio_edad_1">
-                                            Default radio
+                                        18 a 35 años
                                         </label>
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="radio_edad" id="radio_edad_2">
                                         <label class="form-check-label" for="radio_edad_2">
-                                            Default checked radio
+                                        36 a 55 años
                                         </label>
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="radio_edad" id="radio_edad_3">
                                         <label class="form-check-label" for="radio_edad_3">
-                                            Default checked radio
+                                            >55 años
                                         </label>
                                     </div>
                                 </div>
@@ -60,73 +60,298 @@
                             <hr>
                             <!-- pregunta (2) -->
                             <div class="mb-3">
-                                <label class="form-label mb-0"><span class="fw-bold text-pink">2</span>. ¿Cuantos años tienes?</label>
-                                <div class="form-text mb-2">Seleccione el rango de tu edad.</div>
+                                <label class="form-label mb-0"><span class="fw-bold text-pink">2</span>. ¿Cuál es tu género?</label>
+                                <div class="form-text mb-2">Seleccione una opcion.</div>
                                 <div class="d-flex gap-4">
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="radio_edad" id="radio_edad_1">
                                         <label class="form-check-label" for="radio_edad_1">
-                                            Default radio
+                                            Masculino
                                         </label>
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="radio_edad" id="radio_edad_2">
                                         <label class="form-check-label" for="radio_edad_2">
-                                            Default checked radio
+                                            Femenino
                                         </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="radio_edad" id="radio_edad_3">
-                                        <label class="form-check-label" for="radio_edad_3">
-                                            Default checked radio
-                                        </label>
-                                    </div>
+                                    </div>                                  
                                 </div>
                             </div>
                             <hr>
                             <!-- pregunta (3) -->
                             <div class="mb-3">
-                                <label class="form-label mb-0"><span class="fw-bold text-pink">3</span>. ¿Cuantos años tienes?</label>
-                                <div class="form-text mb-2">Seleccione el rango de tu edad.</div>
+                                <label class="form-label mb-0"><span class="fw-bold text-pink">3</span>. ¿Se le entrego sus equipos de proteccion personal(EPP)?</label>
+                                <div class="form-text mb-2">Seleccione una opcion.</div>
                                 <div class="d-flex gap-4">
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="radio_edad" id="radio_edad_1">
                                         <label class="form-check-label" for="radio_edad_1">
-                                            Default radio
+                                            Ninguno
                                         </label>
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="radio_edad" id="radio_edad_2">
                                         <label class="form-check-label" for="radio_edad_2">
-                                            Default checked radio
+                                            Algunos
                                         </label>
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="radio_edad" id="radio_edad_3">
                                         <label class="form-check-label" for="radio_edad_3">
-                                            Default checked radio
+                                            Todos
                                         </label>
                                     </div>
                                 </div>
                             </div>
                             <hr>
+
                             <!-- pregunta (4) -->
-                            <label class="form-label mb-0"><span class="fw-bold text-pink">4</span>. ¿Cuantos años tienes?</label>
-                            <div class="form-text mb-2">Seleccione el rango de tu edad.</div>
+                            <label class="form-label mb-0"><span class="fw-bold text-pink">4</span>. ¿Tiene alguno de estos estados?</label>
+                            <div class="form-text mb-2">Seleccione una o varias opciones.</div>
                             <div class="d-flex gap-4">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                                     <label class="form-check-label" for="flexCheckDefault">
-                                        Default checkbox
+                                    Estrés
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
                                     <label class="form-check-label" for="flexCheckChecked">
-                                        Checked checkbox
+                                    Depresión
                                     </label>
                                 </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                    Fatiga mental
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                    <label class="form-check-label" for="flexCheckChecked">
+                                    Ansioso
+                                    </label>
+                                </div>
+                               </div> 
+                               <hr>
+                             <!-- pregunta (5) -->
+                             <label class="form-label mb-0"><span class="fw-bold text-pink">5</span>. ¿¿Cuál es tu estado de ánimo actual?</label>
+                            <div class="form-text mb-2">Seleccione una o varias opciones.</div>
+                            <div class="d-flex gap-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                    Feliz
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                    <label class="form-check-label" for="flexCheckChecked">
+                                    Triste
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                    Enojado
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                    <label class="form-check-label" for="flexCheckChecked">
+                                   Preocupado
+                                    </label>
+                                </div>
+                               </div> 
+                               <hr>
+                            <!-- pregunta (6) -->
+                            <div class="mb-3">
+                                <label class="form-label mb-0"><span class="fw-bold text-pink">6</span>. ¿Has identificado algún riesgo potencial en tu entorno de trabajo??</label>
+                                <div class="form-text mb-2">Seleccione una opcion.</div>
+                                <div class="d-flex gap-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="radio_edad" id="radio_edad_1">
+                                        <label class="form-check-label" for="radio_edad_1">
+                                        Sí, he identificado un riesgo potencial y he informado a mi supervisor.
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="radio_edad" id="radio_edad_2">
+                                        <label class="form-check-label" for="radio_edad_2">
+                                        Sí, he identificado un riesgo potencial y he tomado medidas preventivas para mitigarlo.
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="radio_edad" id="radio_edad_3">
+                                        <label class="form-check-label" for="radio_edad_3">
+                                        No, no he identificado ningún riesgo potencial hasta el momento.
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="radio_edad" id="radio_edad_3">
+                                        <label class="form-check-label" for="radio_edad_3">
+                                        No estoy seguro, necesito más información sobre cómo identificar riesgos en mi entorno de trabajo.
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
+                            <hr>
+                            <!-- pregunta (5) -->
+                            <label class="form-label mb-0"><span class="fw-bold text-pink">5</span>. ¿Tienes alguna condición de salud física?</label>
+                            <div class="form-text mb-2">Seleccione una o varias opciones.</div>
+                            <div class="d-flex gap-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                    Diabetes
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                    <label class="form-check-label" for="flexCheckChecked">
+                                    Asma
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                    Problemas de audición
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                    <label class="form-check-label" for="flexCheckChecked">
+                                    Problemas de visión (miopía y/o astigmatismo)
+                                    </label>
+                                </div>
+                               </div> 
+                               <hr>
+                            <!-- pregunta (8) -->
+                            <div class="mb-3">
+                                <label class="form-label mb-0"><span class="fw-bold text-pink">8</span>. ¿Cuántos años de experiencia laboral tiene?</label>
+                                <div class="form-text mb-2">Seleccione el rango de años de experiencia.</div>
+                                <div class="d-flex gap-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="radio_edad" id="radio_edad_1">
+                                        <label class="form-check-label" for="radio_edad_1">
+                                        1> año 
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="radio_edad" id="radio_edad_2">
+                                        <label class="form-check-label" for="radio_edad_2">
+                                        1 a 3 años
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="radio_edad" id="radio_edad_3">
+                                        <label class="form-check-label" for="radio_edad_3">
+                                        4 a 8 años
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="radio_edad" id="radio_edad_3">
+                                        <label class="form-check-label" for="radio_edad_3">
+                                        >8 años
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <!-- pregunta (9) -->
+                            <div class="mb-3">
+                                <label class="form-label mb-0"><span class="fw-bold text-pink">9</span>. ¿Cuantos accidentes laborales has sufrido hasta el dia de hoy?</label>
+                                <div class="form-text mb-2">Seleccione el rango de accidentes que has sufrido.</div>
+                                <div class="d-flex gap-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="radio_edad" id="radio_edad_1">
+                                        <label class="form-check-label" for="radio_edad_1">
+                                        0 accidentes
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="radio_edad" id="radio_edad_2">
+                                        <label class="form-check-label" for="radio_edad_2">
+                                        1 a 5 accidentes
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="radio_edad" id="radio_edad_3">
+                                        <label class="form-check-label" for="radio_edad_3">
+                                        6 a 10 accidentes
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="radio_edad" id="radio_edad_4">
+                                        <label class="form-check-label" for="radio_edad_4">
+                                        >10  accidentes
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <!-- pregunta (10) -->
+                            <div class="mb-3">
+                                <label class="form-label mb-0"><span class="fw-bold text-pink">10</span>. ¿Cuál es tu nivel académico más alto alcanzado?</label>
+                                <div class="form-text mb-2">Seleccione una opcion.</div>
+                                <div class="d-flex gap-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="radio_edad" id="radio_edad_1">
+                                        <label class="form-check-label" for="radio_edad_1">
+                                        Primaria
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="radio_edad" id="radio_edad_2">
+                                        <label class="form-check-label" for="radio_edad_2">
+                                        Secundaria
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="radio_edad" id="radio_edad_3">
+                                        <label class="form-check-label" for="radio_edad_3">
+                                        Técnica/universitario
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <!-- pregunta (11) -->
+                            <div class="mb-3">
+                                <label class="form-label mb-0"><span class="fw-bold text-pink">11</span>. ¿Qué tipo de actividad realizas?</label>
+                                <div class="form-text mb-2">Seleccione una acctividad.</div>
+                                <div class="d-flex gap-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="radio_edad" id="radio_edad_1">
+                                        <label class="form-check-label" for="radio_edad_1">
+                                        Excavación
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="radio_edad" id="radio_edad_2">
+                                        <label class="form-check-label" for="radio_edad_2">
+                                        Demolición
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="radio_edad" id="radio_edad_3">
+                                        <label class="form-check-label" for="radio_edad_3">
+                                        Instalación de tubería
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="radio_edad" id="radio_edad_4">
+                                        <label class="form-check-label" for="radio_edad_4">
+                                        Encofrado
+                                        </label>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <button class="btn btn-primary" type="submit">Enviar</button>
+                            <h>
                         </div>
                     </div>
                 </div>

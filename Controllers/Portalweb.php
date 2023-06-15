@@ -28,4 +28,14 @@ class Portalweb extends Controllers
         $data['page_function_js'] = "web/functions_nosotros";
         $this->views->getView($this, "nosotros", $data);
     }
+    public function servicios()
+    {
+        $data['page_id'] = 50;
+        $data['page_tag'] = "MDESV - Sistema Caja";
+        $data['page_title'] = ":. Roles - Sistema Caja";
+        $data['page_name'] = "Lista de Roles";
+        $data['page_css'] = "web/servicios";
+        $data['page_function_js'] = "web/functions_servicios";
+        $this->views->getView($this, "servicios", $data);
+    }
 }

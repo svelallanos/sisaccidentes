@@ -12,8 +12,8 @@
         <div class="navbar-nav ms-auto py-3 py-lg-0">
             <a href="<?= base_url() ?>" class="nav-item nav-link active">Inicio</a>
             <a href="<?= base_url() ?>Portalweb/nosotros" class="nav-item nav-link">Nosotros</a>
-            <a href="service.html" class="nav-item nav-link">Servicios</a>
-            <a href="service.html" class="nav-item nav-link">Contacto</a>
+            <a href="<?= base_url() ?>Portalweb/servicios" class="nav-item nav-link">Servicios</a>
+            <!--<a href="service.html" class="nav-item nav-link">Contacto</a>
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                 <div class="dropdown-menu bg-light m-0">
@@ -23,7 +23,7 @@
                     <a href="testimonial.html" class="dropdown-item">Testimonial</a>
                     <a href="404.html" class="dropdown-item">404 Page</a>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </nav>

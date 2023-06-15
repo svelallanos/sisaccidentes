@@ -46,15 +46,15 @@
             <div class="col-lg-7 px-5 text-start">
                 <div class="h-100 d-inline-flex align-items-center border-start border-end px-3">
                     <small class="fa fa-phone-alt me-2"></small>
-                    <small>+012 345 6789</small>
+                    <small>+51 98889***</small>
                 </div>
                 <div class="h-100 d-inline-flex align-items-center border-end px-3">
                     <small class="far fa-envelope-open me-2"></small>
-                    <small>info@example.com</small>
+                    <small>cobbadoris@gmail.com</small>
                 </div>
                 <div class="h-100 d-inline-flex align-items-center border-end px-3">
                     <small class="far fa-clock me-2"></small>
-                    <small>Mon - Fri : 09 AM - 09 PM</small>
+                    <small><p>El tiempo actual es: <?php echo date('Y-m-d H:i:s'); ?></p></small>
                 </div>
             </div>
             <div class="col-lg-5 px-5 text-end">
