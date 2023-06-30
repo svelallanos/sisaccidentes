@@ -87,4 +87,13 @@ class AccidentesModel extends Mysql
 
         return $this -> insert($insert, $auxAccidente, DB_ACCIDENTES);
     }
+
+    public function updateAccidentes(int $accidentes_id, int $accidentes_estado)
+    {
+        $sql = "UPDATE accidentes SET accidentes_estado = :accidentes_estado
+        WHERE accidentes_id = :accidentes_id";
+        $request = $this->update($sql, ['accidentes_estado' => $accidentes_estado, 'accidentes_id' => $accidentes_id], DB_ACCIDENTES);
+
+        return $request;
+    }
 }

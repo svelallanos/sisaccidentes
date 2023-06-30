@@ -18,7 +18,7 @@
                             Reporte
                         </a>
 
-                        <button type="button" class="btn btn-sm btn-light text-primary" id="btn_add_mod">
+                        <button type="button" class="btn btn-sm btn-light text-primary" data-bs-toggle="modal" data-bs-target="#modal_lesiones">
                             <i class="me-1" data-feather="plus"></i>
                             Nuevo
                         </button>
@@ -40,12 +40,13 @@
 
                         </div>
 
-                        <table id="lista_lesiones" class="table-bordered dataTable table-striped table-hover table-sm w-100">
+                        <table id="tb_lesiones" class="table-bordered dataTable table-striped table-hover table-sm w-100">
                             <thead>
                                 <tr>
                                     <th>N°</th>
-                                    <th>NOMBRE</th>
-                                    <th>DESCRIPCION</th>
+                                    <th>LESION</th>
+                                    <th>ACCIDENTE</th>
+                                    <th>PESO</th>
                                     <th>ESTADO</th>
                                     <th>ACCIONES</th>
                                 </tr>

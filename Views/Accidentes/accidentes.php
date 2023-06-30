@@ -40,7 +40,7 @@
 
                         </div>
 
-                        <table id="lista_accidentes" class="table-bordered dataTable table-striped table-hover table-sm w-100">
+                        <table id="tb_accidentes" class="table-bordered dataTable table-striped table-hover table-sm w-100">
                             <thead>
                                 <tr>
                                     <th>N°</th>

@@ -7,7 +7,17 @@ class LesionesModel extends Mysql
         parent::__construct();
     }
 
-    function selectsAccidentes()
+    // Select All
+
+    function selectAllAccidentes()
+    {
+        $sql = 'SELECT * FROM accidentes ORDER BY accidentes_fechacreacion DESC';
+        $result = $this->select_all($sql, array(), DB_ACCIDENTES);
+
+        return $result;
+    }
+
+    function selectAllLesiones()
     {
         $sql = 'SELECT * FROM lesiones ORDER BY lesiones_fechacreacion DESC';
         $result = $this->select_all($sql, array(), DB_ACCIDENTES);
@@ -15,76 +25,20 @@ class LesionesModel extends Mysql
         return $result;
     }
 
-    public function getLesionesById(string $name_lesion, int $lesion_id)
+    // Select
+    // Insert
+
+    function insertLesiones(int $accidentes_id, string $lesiones_nombre, string $lesiones_descripcion, int $lesiones_peso)
     {
-        $sql = "SELECT * FROM lesiones
-        WHERE lesiones_nombre=:lesiones_nombre";
-
-        $auxLesion = [
-            'lesiones_nombre' => $name_lesion
+        $sql = 'INSERT INTO lesiones (accidentes_id, lesiones_nombre, lesiones_descripcion, lesiones_peso) VALUES(:accidentes_id, :lesiones_nombre, :lesiones_descripcion, :lesiones_peso)';
+        $arrData = [
+            'accidentes_id' => $accidentes_id,
+            'lesiones_nombre' => $lesiones_nombre,
+            'lesiones_descripcion' => $lesiones_descripcion,
+            'lesiones_peso' => $lesiones_peso,
         ];
+        $request = $this->insert($sql, $arrData, DB_ACCIDENTES);
 
-        if($lesion_id != -1){
-            $sql .= " AND lesiones_id NOT IN (:lesiones_id) ";
-            $auxLesion = [
-                'accidentes_nombre' => $name_lesion,
-                'accidentes_id' => $lesion_id
-            ];
-        }
-
-        return $this -> select($sql, $auxLesion, DB_ACCIDENTES);
-    }
-
-    public function getLesionByIdName(int $lesion_id)
-    {
-        $sql = "SELECT * FROM lesiones
-        WHERE lesiones_id=:lesiones_id";
-
-        $auxLesion = [
-            'lesiones_id' => $lesion_id
-        ];
-
-        return $this -> select($sql, $auxLesion, DB_ACCIDENTES);
-    }
-
-    public function borrar_lesion(int $lesion_id, int $estado = 0)
-    {
-        $delete = "UPDATE lesiones
-        SET lesiones_estado=:lesiones_estado
-        WHERE lesiones_id=:lesiones_id";
-
-        $auxLesion = [
-            'lesiones_estado' => $estado,
-            'lesiones_id' => $lesion_id
-        ];
-
-        return $this -> update($delete, $auxLesion, DB_ACCIDENTES);
-    }
-
-    public function actualizar_lesion(string $name_lesion, string $descripcion_lesion, int $lesion_id)
-    {
-        $update = "UPDATE lesiones
-        SET lesiones_nombre=:lesiones_nombre, lesiones_descripcion=:lesiones_descripcion
-        WHERE lesiones_id=:lesiones_id";
-
-        $auxLesion = [
-            'lesiones_nombre' => $name_lesion,
-            'lesiones_descripcion' => $descripcion_lesion,
-            'lesiones_id' => $lesion_id
-        ];
-
-        return $this -> update($update, $auxLesion, DB_ACCIDENTES);
-    }
-
-    public function agregar_accidente(string $name_lesion, string $descripcion_lesion)
-    {
-        $insert = "INSERT INTO lesiones (lesiones_nombre, lesiones_descripcion) VALUES (:lesiones_nombre, :lesiones_descripcion)";
-
-        $auxLesion = [
-            'lesiones_nombre' => $name_lesion,
-            'lesiones_descripcion' => $descripcion_lesion
-        ];
-
-        return $this -> insert($insert, $auxLesion, DB_ACCIDENTES);
+        return $request;
     }
 }

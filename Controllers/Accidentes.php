@@ -48,7 +48,7 @@ class Accidentes extends Controllers
             }
             else if(intval($value['accidentes_estado']) === 0){
                 $dataAccidentes[$key]['options'] = '
-                <button class="btn btn-sm btn-success btn-icon"
+                <button class="btn btn-sm btn-success btn-icon __habilitar"
                 accidente_id="'.$value['accidentes_id'].'"
                 accidentes_nombre="'.$value['accidentes_nombre'].'">
                     <i class="fas fa-sync-alt"></i>
@@ -180,5 +180,35 @@ class Accidentes extends Controllers
         }
 
         json($arrResp);
+    }
+
+    public function updateAccidentes()
+    {
+        parent::verificarLogin(true);
+        parent::verificarPermiso(6, true);
+
+        $return = [
+            'status' => false,
+            'msg' => 'Error al momento habilitar el tipo de accidente.',
+            'value' => 'error'
+        ];
+
+        if($_SERVER['REQUEST_METHOD'] !== 'POST' || !isset($_POST)){
+            json($return);
+        }
+        
+        // Actualizamos
+
+        $updateData = $this->model->updateAccidentes($_POST['accidente_id'], 1);
+
+        if($updateData){
+            $return = [
+                'status' => true,
+                'msg' => 'Accidente Habilitado.',
+                'value' => 'success'
+            ];
+        }
+
+        json($return);
     }
 }
