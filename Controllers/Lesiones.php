@@ -37,11 +37,27 @@ class Lesiones extends Controllers
             $dataLesiones[$key]['numero'] = $key + 1;
             $dataLesiones[$key]['accidentes_nombre'] = $auxDataAccidentes[$value['accidentes_id']];
 
-            $dataLesiones[$key]['options'] = '<button class="btn btn-sm btn-icon btn-success __habilitar"><i class="feather-refresh-cw"></i></button>';
+            $dataLesiones[$key]['options'] = '<button class="btn btn-sm btn-icon btn-success __habilitar"><i class="feather-refresh-cw"></i></button>&nbsp;<button class="btn btn-sm btn-icon btn-primary __view" 
+            data-accidentes_id = "' . $value['accidentes_id'] . '" 
+            data-lesiones_nombre = "' . $value['lesiones_nombre'] . '" 
+            data-lesiones_descripcion = "' . $value['lesiones_descripcion'] . '" 
+            data-lesiones_peso = "' . $value['lesiones_peso'] . '" 
+            ><i class="feather-eye"></i></button>';
             $dataLesiones[$key]['estado'] = '<span class="badge bg-danger">Inabilitado</span>';
 
             if ($value['lesiones_estado'] == 1) {
-                $dataLesiones[$key]['options'] = '<button class="btn btn-sm btn-icon btn-warning __editar"><i class="feather-edit-3"></i></button>&nbsp;<button class="btn btn-sm btn-icon btn-danger __delete"><i class="feather-trash"></i></button>';
+                $dataLesiones[$key]['options'] = '<button class="btn btn-sm btn-icon btn-warning __editar" 
+                data-lesiones_id="' . $value['lesiones_id'] . '" 
+                data-accidentes_id="' . $value['accidentes_id'] . '" 
+                data-lesiones_nombre="' . $value['lesiones_nombre'] . '" 
+                data-lesiones_descripcion="' . $value['lesiones_descripcion'] . '" 
+                data-lesiones_peso="' . $value['lesiones_peso'] . '" 
+                ><i class="feather-edit-3"></i></button>&nbsp;<button class="btn btn-sm btn-icon btn-danger __delete" data-lesiones_id = "' . $value['lesiones_id'] . '" data-lesiones_nombre = "' . $value['lesiones_nombre'] . '"><i class="feather-trash"></i></button>&nbsp;<button class="btn btn-sm btn-icon btn-primary __view" 
+                data-accidentes_id = "' . $value['accidentes_id'] . '" 
+                data-lesiones_nombre = "' . $value['lesiones_nombre'] . '" 
+                data-lesiones_descripcion = "' . $value['lesiones_descripcion'] . '" 
+                data-lesiones_peso = "' . $value['lesiones_peso'] . '" 
+                ><i class="feather-eye"></i></button>';
 
                 $dataLesiones[$key]['estado'] = '<span class="badge bg-success">Activo</span>';
             }
@@ -78,6 +94,60 @@ class Lesiones extends Controllers
                 'status' => true,
                 'message' => 'LESION ' . $_POST['lesiones_nombre'] . ' GUARDADO CORRECTAMENTE.',
                 'value' => 'success'
+            ];
+        }
+
+        json($return);
+    }
+
+    function updateLesiones()
+    {
+        parent::verificarLogin(true);
+        parent::verificarPermiso(7, true);
+
+        $return = [
+            'status' => false,
+            'message' => 'ERROR AL MOMENTO DE ACTUALIZAR LA LESION',
+            'value' => 'error',
+        ];
+
+        $updateData = $this->model->updateLesiones(
+            $_POST['elesiones_id'],
+            $_POST['eaccidentes_id'],
+            $_POST['elesiones_nombre'],
+            $_POST['elesiones_descripcion'],
+            $_POST['elesiones_peso']
+        );
+
+        if ($updateData) {
+            $return = [
+                'status' => true,
+                'message' => 'LESION ACTUALIZADA CORRECTAMENTE',
+                'value' => 'success',
+            ];
+        }
+
+        json($return);
+    }
+
+    function deleteLesiones()
+    {
+        parent::verificarLogin(true);
+        parent::verificarPermiso(7, true);
+
+        $return = [
+            'status' => false,
+            'message' => 'ERROR AL MOMENTO DE ELIMINAR LA LESION',
+            'value' => 'error',
+        ];
+
+        $deleteData = $this->model->deleteLesiones($_POST['lesiones_id']);
+
+        if ($deleteData) {
+            $return = [
+                'status' => true,
+                'message' => 'LESION ELIMINADA CORRECTAMENTE',
+                'value' => 'success',
             ];
         }
 
