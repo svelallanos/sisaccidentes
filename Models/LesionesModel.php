@@ -41,4 +41,33 @@ class LesionesModel extends Mysql
 
         return $request;
     }
+
+    // Update
+    function updateLesiones(int $lesiones_id, int $accidentes_id, string $lesiones_nombre, string $lesiones_descripcion, int $lesiones_peso)
+    {
+        $sql = 'UPDATE lesiones SET accidentes_id = :accidentes_id, lesiones_nombre = :lesiones_nombre, lesiones_descripcion = :lesiones_descripcion, lesiones_peso = :lesiones_peso 
+        WHERE lesiones_id = :lesiones_id';
+
+        $arrData = [
+            'accidentes_id' => $accidentes_id,
+            'lesiones_nombre' => $lesiones_nombre,
+            'lesiones_descripcion' => $lesiones_descripcion,
+            'lesiones_peso' => $lesiones_peso,
+            'lesiones_id' => $lesiones_id
+        ];
+
+        $request = $this->update($sql, $arrData, DB_ACCIDENTES);
+
+        return $request;
+    }
+
+    // Delete
+    function deleteLesiones(int $lesiones_id)
+    {
+        $sql = "DELETE FROM lesiones 
+        WHERE lesiones_id = :lesiones_id";
+        $request = $this->delete($sql, ['lesiones_id' => $lesiones_id], DB_ACCIDENTES);
+
+        return $request;
+    }
 }
