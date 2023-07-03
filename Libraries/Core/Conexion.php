@@ -7,7 +7,7 @@ class Conexion
   public function __construct()
   {
     // Conexion a la base de datos del portal de la municipalidad
-    $conecctionString = "mysql:host=" . DB_HOST . ";dbname=" . DB_ACCIDENTES;
+    $conecctionString = "mysql:host=" . DB_HOST . ";dbname=" . DB_ACCIDENTES . ";port=" . DB_PORT;
 
     try {
       $this->portal = new PDO($conecctionString, DB_USER, DB_PASSWORD);
