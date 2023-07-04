@@ -19,6 +19,9 @@ class Animo extends Controllers
     }
     public function getAnimo()
     {
+        parent::verificarLogin(true);
+        parent::verificarPermiso(11, true);
+
         $request = $this->model->selectAnimo();
         $cont = 1;
         foreach ($request as $key => $value) {
@@ -52,6 +55,9 @@ class Animo extends Controllers
     }
     public function saveAnimo()
     {
+        parent::verificarLogin(true);
+        parent::verificarPermiso(11, true);
+
         $txtName = $_POST["txtName"];
         $txtPeso = $_POST["txtPeso"];
         $txtDescripcion = $_POST["txtDescripcion"];
@@ -68,6 +74,9 @@ class Animo extends Controllers
     }
     public function delAnimo()
     {
+        parent::verificarLogin(true);
+        parent::verificarPermiso(11, true);
+
         $id = $_POST["id"];
         $request = $this->model->deleteAnimo($id);
         if ($request) {
@@ -82,6 +91,8 @@ class Animo extends Controllers
     }
     public function updAnimo()
     {
+        parent::verificarLogin(true);
+        parent::verificarPermiso(11, true);
 
         $request = $this->model->updateAnimo($_POST["idAnimo"], $_POST["txtNameUpd"], $_POST["txtDescripcionUdpt"], $_POST["txtPesoUpdt"], $_POST["cbxEstadoUpdt"]);
         if ($request) {

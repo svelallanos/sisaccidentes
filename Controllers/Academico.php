@@ -11,14 +11,17 @@ class Academico extends Controllers
         parent::verificarLogin(true);
         parent::verificarPermiso(14, true);
         $data['page_id'] = 14;
-        $data['page_tag'] = "Estado Academico";
-        $data['page_title'] = "Estado Academico";
-        $data['page_name'] = "Estado Academico";
+        $data['page_tag'] = "Nivel Academico";
+        $data['page_title'] = "Nivel Academico";
+        $data['page_name'] = "Nivel Academico";
         $data['page_function_js'] = "academico/function_academico";
         $this->views->getView($this, "academico", $data);
     }
     public function getAcademico()
     {
+        parent::verificarLogin(true);
+        parent::verificarPermiso(14, true);
+
         $request = $this->model->selectAcademico();
         $cont = 1;
         foreach ($request as $key => $value) {
@@ -52,6 +55,9 @@ class Academico extends Controllers
     }
     public function saveAcademico()
     {
+        parent::verificarLogin(true);
+        parent::verificarPermiso(14, true);
+
         $txtName = $_POST["txtName"];
         $txtPeso = $_POST["txtPeso"];
         $txtDescripcion = $_POST["txtDescripcion"];
@@ -68,6 +74,9 @@ class Academico extends Controllers
     }
     public function delAcademico()
     {
+        parent::verificarLogin(true);
+        parent::verificarPermiso(14, true);
+
         $id = $_POST["id"];
         $request = $this->model->deleteAcademico($id);
         if ($request) {
@@ -82,7 +91,9 @@ class Academico extends Controllers
     }
     public function updAcademico()
     {
-
+        parent::verificarLogin(true);
+        parent::verificarPermiso(14, true);
+        
         $request = $this->model->updateAcademico($_POST["idAnimo"], $_POST["txtNameUpd"], $_POST["txtDescripcionUdpt"], $_POST["txtPesoUpdt"], $_POST["cbxEstadoUpdt"]);
         if ($request) {
             $return = [

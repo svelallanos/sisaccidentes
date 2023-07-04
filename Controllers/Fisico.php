@@ -19,6 +19,9 @@ class Fisico extends Controllers
     }
     public function getFisico()
     {
+        parent::verificarLogin(true);
+        parent::verificarPermiso(12, true);
+
         $request = $this->model->selectFisico();
         $cont = 1;
         foreach ($request as $key => $value) {
@@ -52,6 +55,9 @@ class Fisico extends Controllers
     }
     public function saveFisico()
     {
+        parent::verificarLogin(true);
+        parent::verificarPermiso(12, true);
+
         $txtName = $_POST["txtName"];
         $txtPeso = $_POST["txtPeso"];
         $txtDescripcion = $_POST["txtDescripcion"];
@@ -68,6 +74,9 @@ class Fisico extends Controllers
     }
     public function delFisico()
     {
+        parent::verificarLogin(true);
+        parent::verificarPermiso(12, true);
+
         $id = $_POST["id"];
         $request = $this->model->deleteFisico($id);
         if ($request) {
@@ -82,6 +91,8 @@ class Fisico extends Controllers
     }
     public function updFisico()
     {
+        parent::verificarLogin(true);
+        parent::verificarPermiso(12, true);
 
         $request = $this->model->updateFisico($_POST["idAnimo"], $_POST["txtNameUpd"], $_POST["txtDescripcionUdpt"], $_POST["txtPesoUpdt"], $_POST["cbxEstadoUpdt"]);
         if ($request) {

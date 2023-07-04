@@ -63,7 +63,7 @@
           </div>
         <?php } ?>
 
-        <?php if (verificarPermiso($data, 6) || verificarPermiso($data, 7) || verificarPermiso($data, 8) | verificarPermiso($data, 11) || verificarPermiso($data, 12)) { ?>
+        <?php if (verificarPermiso($data, 6) || verificarPermiso($data, 7) || verificarPermiso($data, 8) | verificarPermiso($data, 11) || verificarPermiso($data, 12) || verificarPermiso($data, 13) || verificarPermiso($data, 14) || verificarPermiso($data, 15) || verificarPermiso($data, 16) || verificarPermiso($data, 17)) { ?>
           <div class="sidenav-menu-heading">Registro de Datos</div>
           <!-- Sidenav Accordion (Pages)-->
           <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
@@ -76,33 +76,63 @@
               <?php if (verificarPermiso($data, 6)) { ?>
                 <a class="nav-link" href="<?= base_url() ?>Accidentes">
                   Accidentes
-                  <span class="badge bg-primary-soft text-primary ms-auto">Admin</span>
+                  <span class="badge bg-teal-soft text-teal ms-auto">Var</span>
                 </a>
               <?php } ?>
 
               <?php if (verificarPermiso($data, 7)) { ?>
                 <a class="nav-link" href="<?= base_url() ?>Lesiones">
                   Lesiones
-                  <span class="badge bg-primary-soft text-primary ms-auto">Admin</span>
+                  <span class="badge bg-teal-soft text-teal ms-auto">Var</span>
                 </a>
               <?php } ?>
 
               <?php if (verificarPermiso($data, 8)) { ?>
-                <a class="nav-link" href="<?= base_url() ?>Actividades">
+                <a class="nav-link" href="<?= base_url() ?>Cargos">
                   Cargos
-                  <span class="badge bg-primary-soft text-primary ms-auto">Admin</span>
+                  <span class="badge bg-teal-soft text-teal ms-auto">Var</span>
+                </a>
+              <?php } ?>
+              <?php if (verificarPermiso($data, 16)) { ?>
+                <a class="nav-link" href="<?= base_url() ?>Actividades">
+                  Actividades
+                  <span class="badge bg-teal-soft text-teal ms-auto">Var</span>
                 </a>
               <?php } ?>
               <?php if (verificarPermiso($data, 11)) { ?>
-                <a class="nav-link" href="<?= base_url() ?>Capacitaciones">
-                  Capacitaciones
-                  <span class="badge bg-primary-soft text-primary ms-auto">Admin</span>
+                <a class="nav-link" href="<?= base_url() ?>Animo">
+                  Estado de animo
+                  <span class="badge bg-teal-soft text-teal ms-auto">Var</span>
                 </a>
               <?php } ?>
               <?php if (verificarPermiso($data, 12)) { ?>
-                <a class="nav-link" href="<?= base_url() ?>EPP">
-                  Equipo de Protección Personal
-                  <span class="badge bg-primary-soft text-primary ms-auto">Admin</span>
+                <a class="nav-link" href="<?= base_url() ?>Fisico">
+                  Estado fisico
+                  <span class="badge bg-teal-soft text-teal ms-auto">Var</span>
+                </a>
+              <?php } ?>
+              <?php if (verificarPermiso($data, 13)) { ?>
+                <a class="nav-link" href="<?= base_url() ?>Psicologico">
+                  Estado Psicológico
+                  <span class="badge bg-teal-soft text-teal ms-auto">Var</span>
+                </a>
+              <?php } ?>
+              <?php if (verificarPermiso($data, 14)) { ?>
+                <a class="nav-link" href="<?= base_url() ?>Academico">
+                  Nivel Académico
+                  <span class="badge bg-teal-soft text-teal ms-auto">Var</span>
+                </a>
+              <?php } ?>
+              <?php if (verificarPermiso($data, 15)) { ?>
+                <a class="nav-link" href="<?= base_url() ?>Capacitaciones">
+                  Capacitaciones
+                  <span class="badge bg-teal-soft text-teal ms-auto">Var</span>
+                </a>
+              <?php } ?>
+              <?php if (verificarPermiso($data, 17)) { ?>
+                <a class="nav-link" href="<?= base_url() ?>Epp">
+                  EPP
+                  <span class="badge bg-teal-soft text-teal ms-auto">Var</span>
                 </a>
               <?php } ?>
             </nav>

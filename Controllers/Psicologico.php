@@ -19,6 +19,9 @@ class Psicologico extends Controllers
     }
     public function getPsicologico()
     {
+        parent::verificarLogin(true);
+        parent::verificarPermiso(13, true);
+
         $request = $this->model->selectPsicologico();
         $cont = 1;
         foreach ($request as $key => $value) {
@@ -52,6 +55,9 @@ class Psicologico extends Controllers
     }
     public function savePsicologico()
     {
+        parent::verificarLogin(true);
+        parent::verificarPermiso(13, true);
+
         $txtName = $_POST["txtName"];
         $txtPeso = $_POST["txtPeso"];
         $txtDescripcion = $_POST["txtDescripcion"];
@@ -68,6 +74,9 @@ class Psicologico extends Controllers
     }
     public function delPsicologico()
     {
+        parent::verificarLogin(true);
+        parent::verificarPermiso(13, true);
+
         $id = $_POST["id"];
         $request = $this->model->deletePsicologico($id);
         if ($request) {
@@ -82,6 +91,8 @@ class Psicologico extends Controllers
     }
     public function updPsicologico()
     {
+        parent::verificarLogin(true);
+        parent::verificarPermiso(13, true);
 
         $request = $this->model->updatePsicologico($_POST["idAnimo"], $_POST["txtNameUpd"], $_POST["txtDescripcionUdpt"], $_POST["txtPesoUpdt"], $_POST["cbxEstadoUpdt"]);
         if ($request) {
