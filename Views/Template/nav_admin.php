@@ -138,7 +138,6 @@
             </nav>
           </div>
          <?php } ?>
-<!-- -------------->
         <?php if (verificarPermiso($data, 9) || verificarPermiso($data, 10)) { ?>
           <div class="sidenav-menu-heading">PANEL USUARIO</div>
           <?php if (verificarPermiso($data, 9)) { ?>
@@ -153,17 +152,6 @@
               Historial Test
             </a>
           <?php } ?>
-        <?php } ?>
-     <!-- -------------->
-        <?php if (verificarPermiso($data, 13)) { ?>
-          <div class="sidenav-menu-heading">REPORTES</div>
-          <?php if (verificarPermiso($data, 13)) { ?>
-            <a class="nav-link" href="<?= base_url() ?>test">
-              <div class="nav-link-icon"><i class="feather-file-text"></i></div>
-              Reportes
-            </a>
-          <?php } ?>
-          
         <?php } ?>
       </div>
     </div>
