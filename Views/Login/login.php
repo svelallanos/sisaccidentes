@@ -39,16 +39,15 @@
           <div class="card-body">
             <!-- Logo -->
             <div class="app-brand justify-content-center">
-              <a href="login" class="app-brand-link gap-2">
-                <span class="app-brand-logo demo">
-                  <img style="width: 4rem;" src="<?= media() ?>/images/Logo-MDESV.png" alt="">
+              <a href="login" class="d-flex flex-column align-items-center">
+                <span class="app-brand-logo demo mb-3">
+                  <img style="width: 8rem; border-radius: 100%;" src="<?= media() ?>/images/logo_cobba.png" alt="">
                 </span>
-                <span class="demo text-body fw-bolder fs-3">INICIO DE SESIÓN</span>
+                <span class="demo text-body fw-bolder fs-3">INICIO SESIÓN</span>
               </a>
             </div>
             <!-- /Logo -->
-            <h4 class="mb-2">Bienvenidos a Caja 👋</h4>
-            <p class="mb-4">Inicia sesión en tu cuenta</p>
+            <h4 class="mb-2">Bienvenidos a COBBA 👋</h4>
             <form id="form_login" class="mb-3">
               <div class="mb-3">
                 <label for="text" class="form-label fw-bold">USUARIO</label>
@@ -72,6 +71,9 @@
               <span class="fw-bold">Nota: </span>
               <span class="text-secondary">Sino tiene cuenta comunicate con el administrador.</span>
             </p>
+            <div>
+              <a href="<?= base_url() ?>"><i class="fa-solid fa-left-long fa-beat"></i>&nbsp;Regresar</a>
+            </div>
           </div>
         </div>
         <!-- /Register -->
@@ -87,6 +89,7 @@
 
   <!-- Core JS -->
   <!-- build:js assets/vendor/js/core.js -->
+  <script src="<?= media() ?>/js/general/all.js?version=<?= getVersion() ?>"></script>
   <script src="<?= media() ?>/js/general/login/jquery.js"></script>
   <script src="<?= media() ?>/js/general/login/popper.js"></script>
   <script src="<?= media() ?>/js/general/login/bootstrap.js"></script>

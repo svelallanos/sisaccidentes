@@ -31,7 +31,7 @@
                     <h4 class="text-light mb-4">ENLACES RAPIDOS</h4>
                     <a class="btn btn-link" href="<?= base_url() ?>Portalweb/nosotros">Sobre nosotros</a>
                     
-                    <a class="btn btn-link" href="<?= base_url() ?>Portalweb/nosotros">Nuestros servicios</a>
+                    <a class="btn btn-link" href="<?= base_url() ?>Portalweb/servicios">Nuestros servicios</a>
                     <!--  <a class="btn btn-link" href="">Términos y condiciones</a>
                     <a class="btn btn-link" href="">Apoyo</a>
 <a class="btn btn-link" href="">Contacta con nosotros </a>
