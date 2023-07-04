@@ -53,7 +53,7 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header bg-warning">
-                <h1 class="modal-title fs-5 fw-600" id="staticBackdropLabel">AGREGAR LESIONES</h1>
+                <h1 class="modal-title fs-5 fw-600" id="staticBackdropLabel">EDITAR LESIONES</h1>
                 <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form id="eform_lesiones" data-lesiones_id="">
