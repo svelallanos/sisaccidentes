@@ -14,7 +14,7 @@
                             <textarea required class="form-control" name="recomendacion" id="recomendacion" rows="3"></textarea>
                         </div>
                         <div class="col-md-12 mb-3">
-                            <label class="small mb-0 fw-500">PESO:</label>
+                            <label class="small mb-0 fw-500">TIPO:</label>
                             <select required class="form-control" name="tipo" id="tipo">
                                 <option value="" selected disabled>Seleccione una opcion</option>
                                 <option value="Bajo">Bajo</option>
@@ -54,7 +54,7 @@
                             <textarea required class="form-control" name="txtNameUpd" id="txtNameUpd" rows="3"></textarea>
                         </div>
                         <div class="col-md-12 mb-3">
-                            <label class="small mb-0 fw-500">ESTADO:</label>
+                            <label class="small mb-0 fw-500">TIPO:</label>
                             <select required class="form-control" name="cbxEstadoUpdt" id="cbxEstadoUpdt">
                                 <option value="" selected disabled>Seleccione una opcion</option>
                                 <option value="Bajo">Bajo</option>
