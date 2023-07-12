@@ -42,6 +42,7 @@
                                         <input type="range" class="form-range" name="edad" id="edad" min="18" max="100" required>
                                     </div>
                                     <p class="text-center" id="valEdad">00</p>
+
                                 </div>
                                 <hr>
                                 <!-- pregunta (2) SEXO C-->
