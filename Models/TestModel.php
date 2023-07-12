@@ -68,4 +68,10 @@ class TestModel extends Mysql
         $request = $this->select_all($query, [], DB_ACCIDENTES);
         return $request;
     }
+    public function recomendaciones(string $tipo)
+    {
+        $query = "SELECT*FROM recomendaciones AS r WHERE r.tipoRecomendacion='{$tipo}'";
+        $request = $this->select_all($query, [], DB_ACCIDENTES);
+        return $request;
+    }
 }

@@ -230,18 +230,14 @@ class Test extends Controllers
                 "Medio" =>  $totalMedio . "%",
                 "Alto" =>  $totalAlto . "%"
             );
-            $recomendaciones = ' <h6>Recomendaciones para alguien con una baja tendencia de sufrir un accidente laboral:</h6>
-            <ol>
-                <li class="mb-2">Sigue los procedimientos de seguridad: Cumple rigurosamente con todos los procedimientos y protocolos de seguridad establecidos por tu empresa.</li>
-                <li class="mb-2">Utiliza correctamente el equipo de protección personal (EPP): Asegúrate de utilizar y mantener adecuadamente todos los equipos de protección personal necesarios para tu trabajo.</li>
-                <li class="mb-2">Mantén una actitud de alerta y atención: Permanece consciente de tu entorno laboral y de las posibles situaciones de riesgo.</li>
-                <li class="mb-2">Comunica situaciones de riesgo: Reporta cualquier situación o condición insegura que observes en tu lugar de trabajo a tu supervisor o al equipo de seguridad de la empresa.</li>
-                <li class="mb-2">Realiza revisiones periódicas de seguridad: Realiza inspecciones regulares de tu área de trabajo para identificar y corregir posibles riesgos o condiciones inseguras.</li>
-                <li class="mb-2">Mantén un entorno limpio y ordenado: Organiza y limpia tu área de trabajo regularmente para evitar obstrucciones y minimizar riesgos de tropiezos o caídas.</li>
-                <li class="mb-2">Sigue las prácticas de ergonomía: Ajusta tu estación de trabajo y utiliza las posturas correctas para prevenir lesiones musculoesqueléticas y mejorar tu bienestar físico.</li>
-                <li class="mb-2">Fomenta una cultura de seguridad: Promueve activamente la seguridad en tu lugar de trabajo alentando a tus compañeros a seguir las mejores prácticas y comunicando cualquier preocupación en relación a la seguridad.</li>
-                <li class="mb-2">Mantén una mentalidad proactiva: No te conformes con el status que en términos de seguridad laboral. Busca constantemente oportunidades para mejorar los procesos y prácticas existentes y sugiere medidas preventivas adicionales cuando sea necesario.</li>
-            </ol>';
+            $request = $this->model->recomendaciones("Bajo");
+            $cadena = ' <h6>Recomendaciones para alguien con una baja tendencia de sufrir un accidente laboral:</h6>
+                <ol>';
+            foreach ($request as $key => $value) {
+                $cadena .= '<li class="mb-2">' . $value["recomendacion"] . '</li>';
+            }
+            $cadena .= '</ol>';
+            $recomendaciones = $cadena;
         } else if ($totalMedio > $totalBajo && $totalMedio > $totalAlto) {
             $description = "Usted presenta una tendencia media del " . $totalMedio . " % que probablemente no le suceda algun accidente";
             $valResult = array(
@@ -249,18 +245,14 @@ class Test extends Controllers
                 "Medio" =>  '<span class="text-pink fw-bold">' . $totalMedio . '%</span>',
                 "Alto" =>  $totalAlto . "%"
             );
-            $recomendaciones = '<h6>Recomendaciones para alguien con una media tendencia de sufrir un accidente laboral:</h6>
-            <ol>
-                <li class="mb-2">Mantén la atención y concentración: Presta atención a tus tareas y evita distracciones que puedan aumentar el riesgo de accidentes.</li>
-                <li class="mb-2">Utiliza el equipo de protección personal (EPP): Asegúrate de utilizar correctamente todos los equipos de protección personal necesarios para tu trabajo.</li>
-                <li class="mb-2">Cumple con los procedimientos de seguridad: Sigue los procedimientos y protocolos de seguridad establecidos por tu empresa de manera consistente.</li>
-                <li class="mb-2">Toma descansos regulares: Programa descansos breves para evitar la fatiga y mantener la concentración en niveles óptimos.</li>
-                <li class="mb-2">Participa en programas de capacitación: Aprovecha las oportunidades de capacitación ofrecidas por tu empresa para mejorar tus habilidades y conocimientos en seguridad laboral.</li>
-                <li class="mb-2">Reporta situaciones de riesgo: Comunica cualquier situación o condición insegura que observes en tu lugar de trabajo a tu supervisor o al equipo de seguridad de la empresa.</li>
-                <li class="mb-2">Mantén un entorno limpio y ordenado: Organiza y mantiene tu área de trabajo libre de obstrucciones y desorden que puedan aumentar el riesgo de accidentes.</li>
-                <li class="mb-2">Sigue las normas de ergonomía: Ajusta tu estación de trabajo y utiliza las posturas correctas para minimizar el riesgo de lesiones musculoesqueléticas.</li>
-                <li class="mb-2">Realiza pausas de estiramiento: Realiza ejercicios de estiramiento regularmente para reducir.</li>
-            </ol>';
+            $cadena = '<h6>Recomendaciones para alguien con una media tendencia de sufrir un accidente laboral:</h6>
+            <ol>';
+            $request = $this->model->recomendaciones("Medio");
+            foreach ($request as $key => $value) {
+                $cadena .= '<li class="mb-2">' . $value["recomendacion"] . '</li>';
+            }
+            $cadena .= '</ol>';
+            $recomendaciones = $cadena;
         } else if ($totalAlto > $totalBajo && $totalAlto > $totalMedio) {
             $description = "Usted presenta una tendencia alta del " . $totalAlto . " % que le suceda algun accidente en el trabajo";
             $valResult = array(
@@ -268,19 +260,14 @@ class Test extends Controllers
                 "Medio" =>  $totalMedio . "%",
                 "Alto" =>   '<span class="text-pink fw-bold">' . $totalAlto . '%</span>'
             );
-            $recomendaciones = '<h6>Recomendaciones para alguien con una alta tendencia de sufrir un accidente laboral:</h6>
-            <ol>
-                <li class="mb-2">Obtén una evaluación médica: Consulta a un profesional de la salud para evaluar cualquier condición física o de salud que pueda estar aumentando tu riesgo de accidentes laborales.</li>
-                <li class="mb-2">Sigue los procedimientos de seguridad: Cumple estrictamente con todos los procedimientos y protocolos de seguridad establecidos por tu empresa.</li>
-                <li class="mb-2">Utiliza el equipo de protección personal (EPP): Asegúrate de utilizar y mantener correctamente todos los equipos de protección personal necesarios para tu trabajo.</li>
-                <li class="mb-2">Recibe capacitación adicional: Participa en cursos o capacitaciones específicas para mejorar tus habilidades y conocimientos en seguridad laboral.</li>
-                <li class="mb-2">Haz pausas regulares: Programa pausas durante tu jornada laboral para descansar y recuperar la concentración, especialmente si tu trabajo implica tareas repetitivas o de alta demanda física.</li>
-                <li class="mb-2">Mantén una comunicación efectiva: Comunica cualquier preocupación o situación de riesgo a tu supervisor o equipo de seguridad de la empresa.</li>
-                <li class="mb-2">Evita distracciones: Elimina cualquier distracción, como el uso de dispositivos electrónicos, cuando estés realizando tareas que requieran tu total atención y concentración.</li>
-                <li class="mb-2">Mantén tu entorno limpio y ordenado: Mantén tu área de trabajo libre de obstrucciones, desorden y sustancias derramadas que puedan aumentar el riesgo de accidentes.</li>
-                <li class="mb-2">Cuida tu bienestar emocional: Busca formas de gestionar el estrés y las emociones negativas, ya que pueden afectar tu capacidad para mantener la concentración y tomar decisiones seguras.</li>
-                <li class="mb-2">Participa en programas de seguridad laboral: Únete a comités de seguridad o grupos de trabajo dedicados a mejorar la seguridad en el lugar de trabajo y contribuye activamente con ideas y sugerencias.</li>
-            </ol>';
+            $cadena = '<h6>Recomendaciones para alguien con una alta tendencia de sufrir un accidente laboral:</h6>
+            <ol>';
+            $request = $this->model->recomendaciones("Alto");
+            foreach ($request as $key => $value) {
+                $cadena .= '<li class="mb-2">' . $value["recomendacion"] . '</li>';
+            }
+            $cadena .= '</ol>';
+            $recomendaciones = $cadena;
         } else if (($totalBajo + $totalMedio) > ($totalAlto + $totalMedio)) {
             $description = "Usted presenta una tendencia baja del " . $totalBajo . " % que no podria sucederle algun accidente";
             $valResult = array(
@@ -288,18 +275,14 @@ class Test extends Controllers
                 "Medio" => '<span class="text-pink fw-bold">' . $totalMedio . "% </span>",
                 "Alto" =>  $totalAlto . "%"
             );
-            $recomendaciones = ' <h6>Recomendaciones para alguien con una baja tendencia de sufrir un accidente laboral:</h6>
-            <ol>
-                <li class="mb-2">Sigue los procedimientos de seguridad: Cumple rigurosamente con todos los procedimientos y protocolos de seguridad establecidos por tu empresa.</li>
-                <li class="mb-2">Utiliza correctamente el equipo de protección personal (EPP): Asegúrate de utilizar y mantener adecuadamente todos los equipos de protección personal necesarios para tu trabajo.</li>
-                <li class="mb-2">Mantén una actitud de alerta y atención: Permanece consciente de tu entorno laboral y de las posibles situaciones de riesgo.</li>
-                <li class="mb-2">Comunica situaciones de riesgo: Reporta cualquier situación o condición insegura que observes en tu lugar de trabajo a tu supervisor o al equipo de seguridad de la empresa.</li>
-                <li class="mb-2">Realiza revisiones periódicas de seguridad: Realiza inspecciones regulares de tu área de trabajo para identificar y corregir posibles riesgos o condiciones inseguras.</li>
-                <li class="mb-2">Mantén un entorno limpio y ordenado: Organiza y limpia tu área de trabajo regularmente para evitar obstrucciones y minimizar riesgos de tropiezos o caídas.</li>
-                <li class="mb-2">Sigue las prácticas de ergonomía: Ajusta tu estación de trabajo y utiliza las posturas correctas para prevenir lesiones musculoesqueléticas y mejorar tu bienestar físico.</li>
-                <li class="mb-2">Fomenta una cultura de seguridad: Promueve activamente la seguridad en tu lugar de trabajo alentando a tus compañeros a seguir las mejores prácticas y comunicando cualquier preocupación en relación a la seguridad.</li>
-                <li class="mb-2">Mantén una mentalidad proactiva: No te conformes con el status que en términos de seguridad laboral. Busca constantemente oportunidades para mejorar los procesos y prácticas existentes y sugiere medidas preventivas adicionales cuando sea necesario.</li>
-            </ol>';
+            $cadena = ' <h6>Recomendaciones para alguien con una baja tendencia de sufrir un accidente laboral:</h6>
+            <ol>';
+            $request = $this->model->recomendaciones("Bajo");
+            foreach ($request as $key => $value) {
+                $cadena .= '<li class="mb-2">' . $value["recomendacion"] . '</li>';
+            }
+            $cadena .= '</ol>';
+            $recomendaciones = $cadena;
         } else if (($totalMedio + $totalAlto) >= ($totalMedio + $totalBajo)) {
             $description = "Usted presenta una tendencia alta del " . $totalAlto . " % que le suceda algun accidente en el trabajo";
             $valResult = array(
@@ -307,19 +290,14 @@ class Test extends Controllers
                 "Medio" => '<span class="text-pink fw-bold">' . $totalMedio . '%</span>',
                 "Alto" =>   '<span class="text-pink fw-bold">' . $totalAlto . '%</span>'
             );
-            $recomendaciones = '<h6>Recomendaciones para alguien con una alta tendencia de sufrir un accidente laboral:</h6>
-            <ol>
-                <li class="mb-2">Obtén una evaluación médica: Consulta a un profesional de la salud para evaluar cualquier condición física o de salud que pueda estar aumentando tu riesgo de accidentes laborales.</li>
-                <li class="mb-2">Sigue los procedimientos de seguridad: Cumple estrictamente con todos los procedimientos y protocolos de seguridad establecidos por tu empresa.</li>
-                <li class="mb-2">Utiliza el equipo de protección personal (EPP): Asegúrate de utilizar y mantener correctamente todos los equipos de protección personal necesarios para tu trabajo.</li>
-                <li class="mb-2">Recibe capacitación adicional: Participa en cursos o capacitaciones específicas para mejorar tus habilidades y conocimientos en seguridad laboral.</li>
-                <li class="mb-2">Haz pausas regulares: Programa pausas durante tu jornada laboral para descansar y recuperar la concentración, especialmente si tu trabajo implica tareas repetitivas o de alta demanda física.</li>
-                <li class="mb-2">Mantén una comunicación efectiva: Comunica cualquier preocupación o situación de riesgo a tu supervisor o equipo de seguridad de la empresa.</li>
-                <li class="mb-2">Evita distracciones: Elimina cualquier distracción, como el uso de dispositivos electrónicos, cuando estés realizando tareas que requieran tu total atención y concentración.</li>
-                <li class="mb-2">Mantén tu entorno limpio y ordenado: Mantén tu área de trabajo libre de obstrucciones, desorden y sustancias derramadas que puedan aumentar el riesgo de accidentes.</li>
-                <li class="mb-2">Cuida tu bienestar emocional: Busca formas de gestionar el estrés y las emociones negativas, ya que pueden afectar tu capacidad para mantener la concentración y tomar decisiones seguras.</li>
-                <li class="mb-2">Participa en programas de seguridad laboral: Únete a comités de seguridad o grupos de trabajo dedicados a mejorar la seguridad en el lugar de trabajo y contribuye activamente con ideas y sugerencias.</li>
-            </ol>';
+            $cadena = '<h6>Recomendaciones para alguien con una alta tendencia de sufrir un accidente laboral:</h6>
+            <ol>';
+            $request = $this->model->recomendaciones("Alto");
+            foreach ($request as $key => $value) {
+                $cadena .= '<li class="mb-2">' . $value["recomendacion"] . '</li>';
+            }
+            $cadena .= '</ol>';
+            $recomendaciones = $cadena;
         }
         $resultVal = array("Bajo" => $totalBajo, "Medio" => $totalMedio, "Alto" => $totalAlto);
 

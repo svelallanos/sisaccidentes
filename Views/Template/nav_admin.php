@@ -62,7 +62,6 @@
             </nav>
           </div>
         <?php } ?>
-
         <?php if (verificarPermiso($data, 6) || verificarPermiso($data, 7) || verificarPermiso($data, 8) | verificarPermiso($data, 11) || verificarPermiso($data, 12) || verificarPermiso($data, 13) || verificarPermiso($data, 14) || verificarPermiso($data, 15) || verificarPermiso($data, 16) || verificarPermiso($data, 17)) { ?>
           <div class="sidenav-menu-heading">Registro de Datos</div>
           <!-- Sidenav Accordion (Pages)-->
@@ -135,9 +134,15 @@
                   <span class="badge bg-teal-soft text-teal ms-auto">Var</span>
                 </a>
               <?php } ?>
+              <?php if (verificarPermiso($data, 18)) { ?>
+                <a class="nav-link" href="<?= base_url() ?>recomendaciones">
+                  Recomendaciones
+                  <span class="badge bg-teal-soft text-teal ms-auto">Var</span>
+                </a>
+              <?php } ?>
             </nav>
           </div>
-         <?php } ?>
+        <?php } ?>
         <?php if (verificarPermiso($data, 9) || verificarPermiso($data, 10)) { ?>
           <div class="sidenav-menu-heading">PANEL USUARIO</div>
           <?php if (verificarPermiso($data, 9)) { ?>
@@ -155,7 +160,7 @@
         <?php } ?>
       </div>
     </div>
-    
+
     <!-- Sidenav Footer-->
     <div class="sidenav-footer">
       <div class="sidenav-footer-content">
