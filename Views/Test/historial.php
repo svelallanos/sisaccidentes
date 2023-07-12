@@ -34,9 +34,10 @@
                             <thead>
                                 <tr>
                                     <th>N°</th>
-                                    <th>NOMBRE</th>
                                     <th>DESCRIPCION</th>
-                                    <th>ESTADO</th>
+                                    <th>BAJO %</th>
+                                    <th>MEDIO %</th>
+                                    <th>ALTO %</th>
                                     <th>ACCIONES</th>
                                 </tr>
                             </thead>
@@ -49,6 +50,7 @@
         </div>
     </div>
 </main>
-<?php footerAdmin($data);
+<?php
+footerAdmin($data);
 getModal('modal_accidentes', $data);
 ?>
