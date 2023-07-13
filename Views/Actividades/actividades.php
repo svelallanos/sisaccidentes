@@ -10,16 +10,18 @@
                             <?= !empty($data['page_name']) ? $data['page_name'] : 'Sin Nombre' ?>
                         </h1>
                     </div>
-                    <!-- <div class="col-12 col-xl-auto mb-3">
+                    <div class="col-12 col-xl-auto mb-3">
                         <a class="btn btn-sm btn-danger-soft text-danger" href="#">
                             <i class="feather-file-text me-1"></i>
                             Reporte
                         </a>
-                        <a class="btn btn-sm btn-light text-primary" href="<?= base_url() ?>Usuarios/nuevo">
+                        <button type="button" class="btn btn-sm btn-light text-primary" data-bs-toggle="modal" data-bs-target="#modal_save">
                             <i class="me-1" data-feather="plus"></i>
-                            Nuevo Usuario
-                        </a>
-                    </div> -->
+                            Nuevo
+                        </button>
+
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -28,9 +30,33 @@
     <div class="container-fluid px-4">
         <div class="row">
             <div class="col-md-12">
-                ...
+                <div class="card">
+                    <div class="card-body">
+
+                        <div class="message_lesiones mb-2">
+
+                        </div>
+
+                        <table id="tb" class="table-bordered dataTable table-striped table-hover table-sm w-100">
+                            <thead>
+                                <tr>
+                                    <th>N°</th>
+                                    <th>ACTIVIDADES</th>
+                                    <th>DESCRIPCION</th>
+                                    <th>PESO</th>
+                                    <th>ESTADO</th>
+                                    <th>ACCIONES</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </main>
-<?php footerAdmin($data) ?>
+<?php footerAdmin($data);
+getModal('modal_actividades', $data);
+?>
