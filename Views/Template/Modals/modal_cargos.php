@@ -3,23 +3,15 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header" style="background-color: #00273C">
-                <h1 class="modal-title title_mod fs-5" style="color: dodgerblue;" id="staticBackdropLabel">AGREGAR EPP</h1>
+                <h1 class="modal-title title_mod fs-5" style="color: dodgerblue;" id="staticBackdropLabel">AGREGAR CARGO</h1>
                 <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form id="form_save">
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col-md-8 mb-3">
-                            <label class="small mb-0 fw-500">NOMBRE :</label>
+                        <div class="col-md-12 mb-3">
+                            <label class="small mb-0 fw-500">NOMBRE:</label>
                             <input required type="text" class="form-control" name="txtName" id="txtName">
-                        </div>
-                        <div class="col-md-2 mb-3">
-                            <label class="small mb-0 fw-500">PESO:</label>
-                            <input required type="number" min="0" class="form-control" name="txtPeso" id="txtPeso">
-                        </div>
-                        <div class="col-md-2 mb-3">
-                            <label class="small mb-0 fw-500">CANTIDAD:</label>
-                            <input required type="number" min="0" class="form-control" name="txtCantidad" id="txtCantidad">
                         </div>
                         <div class="col-md-12 mb-0">
                             <div class="mb-0">
@@ -47,20 +39,16 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header" style="background-color: #00273C">
-                <h1 class="modal-title title_mod fs-5" style="color: dodgerblue;" id="staticBackdropLabel">ACTUALIZAR EPP</h1>
+                <h1 class="modal-title title_mod fs-5" style="color: dodgerblue;" id="staticBackdropLabel">ACTUALIZAR CARGO</h1>
                 <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form id="form_update">
                 <input type="hidden" name="idAnimo" id="idAnimo" value="">
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col-md-10 mb-3">
+                        <div class="col-md-12 mb-3">
                             <label class="small mb-0 fw-500">NOMBRE :</label>
                             <input required type="text" class="form-control" name="txtNameUpd" id="txtNameUpd">
-                        </div>
-                        <div class="col-md-2 mb-3">
-                            <label class="small mb-0 fw-500">PESO:</label>
-                            <input required type="number" min="0" class="form-control" name="txtPesoUpdt" id="txtPesoUpdt">
                         </div>
                         <div class="col-md-12 mb-0">
                             <div class="mb-0">

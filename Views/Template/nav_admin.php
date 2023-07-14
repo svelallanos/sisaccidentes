@@ -62,7 +62,7 @@
             </nav>
           </div>
         <?php } ?>
-        <?php if (verificarPermiso($data, 6) || verificarPermiso($data, 7) || verificarPermiso($data, 8) | verificarPermiso($data, 11) || verificarPermiso($data, 12) || verificarPermiso($data, 13) || verificarPermiso($data, 14) || verificarPermiso($data, 15) || verificarPermiso($data, 16) || verificarPermiso($data, 17)) { ?>
+        <?php if (verificarPermiso($data, 6) || verificarPermiso($data, 7) || verificarPermiso($data, 8) | verificarPermiso($data, 11) || verificarPermiso($data, 12) || verificarPermiso($data, 13) || verificarPermiso($data, 14) || verificarPermiso($data, 15) || verificarPermiso($data, 16) || verificarPermiso($data, 17) || verificarPermiso($data, 20)) { ?>
           <div class="sidenav-menu-heading">Registro de Datos</div>
           <!-- Sidenav Accordion (Pages)-->
           <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
@@ -140,10 +140,16 @@
                   <span class="badge bg-teal-soft text-teal ms-auto">Var</span>
                 </a>
               <?php } ?>
+              <?php if (verificarPermiso($data, 20)) { ?>
+                <a class="nav-link" href="<?= base_url() ?>talla">
+                  Talla
+                  <span class="badge bg-teal-soft text-teal ms-auto">Var</span>
+                </a>
+              <?php } ?>
             </nav>
           </div>
         <?php } ?>
-        <?php if (verificarPermiso($data, 9) || verificarPermiso($data, 10)) { ?>
+        <?php if (verificarPermiso($data, 9) || verificarPermiso($data, 10) || verificarPermiso($data, 19)) { ?>
           <div class="sidenav-menu-heading">PANEL USUARIO</div>
           <?php if (verificarPermiso($data, 9)) { ?>
             <a class="nav-link" href="<?= base_url() ?>test">
@@ -155,6 +161,24 @@
             <a class="nav-link" href="<?= base_url() ?>test/historial">
               <div class="nav-link-icon"><i class="feather-folder"></i></div>
               Historial Test
+            </a>
+          <?php } ?>
+          <?php if (verificarPermiso($data, 19)) { ?>
+            <a class="nav-link" href="<?= base_url() ?>epp/hepp">
+              <div class="nav-link-icon"><i class="feather-folder"></i></div>
+              Historial EPP
+            </a>
+          <?php } ?>
+          <?php if (verificarPermiso($data, 21)) { ?>
+            <a class="nav-link" href="<?= base_url() ?>lesiones/hlesiones">
+              <div class="nav-link-icon"><i class="feather-folder"></i></div>
+              Historial LESIONES
+            </a>
+          <?php } ?>
+          <?php if (verificarPermiso($data, 22)) { ?>
+            <a class="nav-link" href="<?= base_url() ?>test/alltest">
+              <div class="nav-link-icon"><i class="feather-folder"></i></div>
+              Historial todos los TEST
             </a>
           <?php } ?>
         <?php } ?>

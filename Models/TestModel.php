@@ -20,6 +20,12 @@ class TestModel extends Mysql
         $request = $this->select_all($query, [], DB_ACCIDENTES);
         return $request;
     }
+    public function selectHistorialAll()
+    {
+        $query = "SELECT*FROM test AS t INNER JOIN usuarios AS u ON u.usuarios_id=t.usuarios_id;";
+        $request = $this->select_all($query, [], DB_ACCIDENTES);
+        return $request;
+    }
     public function selectTest(int $id)
     {
         $query = "SELECT*FROM test AS t WHERE t.test_id='{$id}';";

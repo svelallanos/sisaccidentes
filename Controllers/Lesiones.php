@@ -10,7 +10,6 @@ class Lesiones extends Controllers
     {
         parent::verificarLogin(true);
         parent::verificarPermiso(7, true);
-
         $data['page_id'] = 3;
         $data['page_tag'] = "Lesiones";
         $data['page_title'] = "Lesiones";
@@ -19,7 +18,20 @@ class Lesiones extends Controllers
         $data['accidentes'] = $this->model->selectAllAccidentes();
         $this->views->getView($this, "lesiones", $data);
     }
+    public function hlesiones()
+    {
+        parent::verificarLogin(true);
+        parent::verificarPermiso(21, true);
+        $data['page_id'] = 21;
+        $data['page_tag'] = "Historial Lesiones";
+        $data['page_title'] = "Historial Lesiones";
+        $data['page_name'] = "Historial Lesiones";
+        $data['page_function_js'] = "lesiones/function_hlesiones";
+        $data['accidentes'] = $this->model->selectAllAccidentes();
+        $data['page_user'] = $this->model->selectUser();
 
+        $this->views->getView($this, "hlesiones", $data);
+    }
     public function selectAllLesiones()
     {
         parent::verificarLogin(true);
@@ -65,8 +77,25 @@ class Lesiones extends Controllers
 
         json($dataLesiones);
     }
-
-    function saveLesiones()
+    public function getHLesiones()
+    {
+        parent::verificarLogin(true);
+        parent::verificarPermiso(21, true);
+        $request = $this->model->selectHLesiones();
+        $cont = 1;
+        foreach ($request as $key => $value) {
+            $request[$key]["numero"] = $cont;
+            $request[$key]["acciones"] = '  <button 
+                                            class="btn btn-sm btn-icon btn-danger __delete"
+                                            data-id="' . $value["hlesiones_id"] . '"
+                                            >
+                                                <i class="feather-trash"></i>
+                                            </button>';
+            $cont++;
+        }
+        json($request);
+    }
+    public function saveLesiones()
     {
         parent::verificarLogin(true);
         parent::verificarPermiso(7, true);
@@ -100,7 +129,7 @@ class Lesiones extends Controllers
         json($return);
     }
 
-    function updateLesiones()
+    public function updateLesiones()
     {
         parent::verificarLogin(true);
         parent::verificarPermiso(7, true);
@@ -130,7 +159,7 @@ class Lesiones extends Controllers
         json($return);
     }
 
-    function deleteLesiones()
+    public function deleteLesiones()
     {
         parent::verificarLogin(true);
         parent::verificarPermiso(7, true);
@@ -148,6 +177,75 @@ class Lesiones extends Controllers
                 'status' => true,
                 'message' => 'LESION ELIMINADA CORRECTAMENTE',
                 'value' => 'success',
+            ];
+        }
+
+        json($return);
+    }
+    public function delHLesion()
+    {
+        parent::verificarLogin(true);
+        parent::verificarPermiso(21, true);
+
+        $return = [
+            'status' => false,
+            'message' => 'ERROR AL MOMENTO DE ELIMINAR LA LESION',
+            'value' => 'error',
+        ];
+        $deleteData = $this->model->deleteHLesion($_POST['id']);
+        if ($deleteData) {
+            $return = [
+                'status' => true,
+                'message' => 'LESION ELIMINADA CORRECTAMENTE',
+                'value' => 'success',
+            ];
+        }
+
+        json($return);
+    }
+    public function getLesion()
+    {
+        parent::verificarLogin(true);
+        parent::verificarPermiso(21, true);
+
+        $return = [
+            'status' => false,
+            'message' => 'ERROR AL MOMENTO DE ELIMINAR LA LESION',
+            'value' => 'error',
+        ];
+
+        $request = $this->model->selectLesion($_POST['id']);
+        $cadena = null;
+        $cadena .= ' <option value="" disabled selected>Seleccione una opcion</option>';
+        foreach ($request as $key => $value) {
+            $cadena .= "<option value='" . $value["lesiones_id"] . "' >" . $value["lesiones_nombre"] . "</option>";
+        }
+
+        echo ($cadena);
+    }
+    public function saveHLesion()
+    {
+        parent::verificarLogin(true);
+        parent::verificarPermiso(21, true);
+
+        $return = [
+            'status' => false,
+            'message' => 'ERROR AL MOMENTO DE GUARDAR LA LESION',
+            'value' => 'error'
+        ];
+
+
+
+        $saveData = $this->model->insertHLesion(
+            $_POST['cbxLesiones'],
+            $_POST['cbxUser']
+        );
+
+        if ($saveData > 0) {
+            $return = [
+                'status' => true,
+                'message' => 'LESION  GUARDADO CORRECTAMENTE.',
+                'value' => 'success'
             ];
         }
 

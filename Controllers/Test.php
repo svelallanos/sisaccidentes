@@ -58,6 +58,17 @@ class Test extends Controllers
         $data['page_function_js'] = "test/functions_test";
         $this->views->getView($this, "historial", $data);
     }
+    public function alltest()
+    {
+        parent::verificarLogin(true);
+        parent::verificarPermiso(22, true);
+        $data['page_id'] = 22;
+        $data['page_tag'] = "MDESV - Sistema COBBA";
+        $data['page_title'] = ":. Historial de test de accidentes - Sistema COBBA";
+        $data['page_name'] = "Historial de todos los test de accidentes";
+        $data['page_function_js'] = "test/functions_alltest";
+        $this->views->getView($this, "alltest", $data);
+    }
     public function saveTest()
     {
         if (!$_POST) {
@@ -326,6 +337,16 @@ class Test extends Controllers
         $cont = 1;
         foreach ($request as $key => $value) {
             $request[$key]["acciones"] = "<button class='btn btn-danger' id='btnPrint' data-id='" . $value["test_id"] . "'><i class='feather-printer'></i></button>";
+            $request[$key]["numero"] = $cont;
+            $cont++;
+        }
+        json($request);
+    }
+    public function getHistorialAll()
+    {
+        $request = $this->model->selectHistorialAll();
+        $cont = 1;
+        foreach ($request as $key => $value) {
             $request[$key]["numero"] = $cont;
             $cont++;
         }

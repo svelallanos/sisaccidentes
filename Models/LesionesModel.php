@@ -70,4 +70,37 @@ class LesionesModel extends Mysql
 
         return $request;
     }
+    function deleteHLesion(int $lesiones_id)
+    {
+        $sql = "DELETE FROM `historial_lesiones` WHERE  `hlesiones_id`=?;";
+        $request = $this->delete($sql, [$lesiones_id], DB_ACCIDENTES);
+        return $request;
+    }
+    public function selectHLesiones()
+    {
+        $query = "select*from historial_lesiones as hl
+        inner join usuarios as u on u.usuarios_id=hl.user_id
+        inner join lesiones as l on l.lesiones_id=hl.lesiones_id
+        inner join accidentes as a on a.accidentes_id=l.accidentes_id;";
+        $request = $this->select_all($query, [], DB_ACCIDENTES);
+        return $request;
+    }
+    public function selectUser()
+    {
+        $query = "SELECT * FROM `usuarios`";
+        $request = $this->select_all($query, [], DB_ACCIDENTES);
+        return $request;
+    }
+    public function selectLesion(int $id)
+    {
+        $query = "SELECT * FROM lesiones AS l WHERE l.accidentes_id={$id}";
+        $request = $this->select_all($query, [], DB_ACCIDENTES);
+        return $request;
+    }
+    public function insertHLesion(int $idLesion, int $idUsuario)
+    {
+        $query = "INSERT INTO `historial_lesiones` (`lesiones_id`, `user_id`) VALUES (?, ?);";
+        $request = $this->insert($query, [$idLesion, $idUsuario], DB_ACCIDENTES);
+        return $request;
+    }
 }

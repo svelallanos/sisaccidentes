@@ -3,23 +3,29 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header" style="background-color: #00273C">
-                <h1 class="modal-title title_mod fs-5" style="color: dodgerblue;" id="staticBackdropLabel">AGREGAR EPP</h1>
+                <h1 class="modal-title title_mod fs-5" style="color: dodgerblue;" id="staticBackdropLabel">AGREGAR TALLA</h1>
                 <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form id="form_save">
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col-md-8 mb-3">
-                            <label class="small mb-0 fw-500">NOMBRE :</label>
-                            <input required type="text" class="form-control" name="txtName" id="txtName">
+                        <div class="col-md-12 mb-3">
+                            <label class="small mb-0 fw-500">EPP:</label>
+                            <select required class="form-control" name="cbxEpp" id="cbxEpp">
+                                <option value="" disabled selected>Seleccione una opcion</option>
+                                <?php
+                                $epp = $data['page_Epp'];
+                                $cadena = "";
+                                foreach ($epp as $key => $value) {
+                                    $cadena .= "<option value='" . $value["epp_id"] . "'>" . $value["epp_nombre"] . "</option>";
+                                }
+                                echo $cadena;
+                                ?>
+                            </select>
                         </div>
-                        <div class="col-md-2 mb-3">
-                            <label class="small mb-0 fw-500">PESO:</label>
-                            <input required type="number" min="0" class="form-control" name="txtPeso" id="txtPeso">
-                        </div>
-                        <div class="col-md-2 mb-3">
-                            <label class="small mb-0 fw-500">CANTIDAD:</label>
-                            <input required type="number" min="0" class="form-control" name="txtCantidad" id="txtCantidad">
+                        <div class="col-md-12 mb-3">
+                            <label class="small mb-0 fw-500">TALLA:</label>
+                            <input required type="text" class="form-control" name="txtTalla" id="txtTalla">
                         </div>
                         <div class="col-md-12 mb-0">
                             <div class="mb-0">
@@ -47,20 +53,16 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header" style="background-color: #00273C">
-                <h1 class="modal-title title_mod fs-5" style="color: dodgerblue;" id="staticBackdropLabel">ACTUALIZAR EPP</h1>
+                <h1 class="modal-title title_mod fs-5" style="color: dodgerblue;" id="staticBackdropLabel">ACTUALIZAR TALLA</h1>
                 <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form id="form_update">
-                <input type="hidden" name="idAnimo" id="idAnimo" value="">
+                <input type="hidden" name="id" id="id" value="">
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col-md-10 mb-3">
-                            <label class="small mb-0 fw-500">NOMBRE :</label>
+                        <div class="col-md-12 mb-3">
+                            <label class="small mb-0 fw-500">NOMBRE:</label>
                             <input required type="text" class="form-control" name="txtNameUpd" id="txtNameUpd">
-                        </div>
-                        <div class="col-md-2 mb-3">
-                            <label class="small mb-0 fw-500">PESO:</label>
-                            <input required type="number" min="0" class="form-control" name="txtPesoUpdt" id="txtPesoUpdt">
                         </div>
                         <div class="col-md-12 mb-0">
                             <div class="mb-0">
